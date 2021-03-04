@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Page d'administration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div>
+        <h2>
+            Bienvenue @ViewBag.utilisateur.prenom @ViewBag.utilisateur.nom
+            sur la page d'accueil d'administration de la solution
+        </h2>
+    </div>
+
+    <ul>
+        <li><a href="/Admin/AfficheUtilisateurs/">Liste des Utilisateurs</a></li>
+        <li><a href="/Admin/AfficheTypeProjet/">Liste des Types de projet</a></li>
+    </ul>
+</body>
+

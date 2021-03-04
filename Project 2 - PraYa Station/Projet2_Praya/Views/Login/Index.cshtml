@@ -1,0 +1,43 @@
+﻿@model Projet2_Praya.ViewModels.UtilisateurViewModel
+@{
+    ViewBag.Title = "Login à l'application";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div>
+
+        @if (Model.Authentifie)
+        {
+            <h3>
+                Vous êtes déjà authentifié avec le login :
+                @Model.Utilisateur.utilisateur_email <br />
+                @Model.Utilisateur.nom / @Model.Utilisateur.prenom
+            </h3>
+            @Html.ActionLink("Voulez-vous vous déconnecter ?", "Deconnexion")
+        }
+        else
+        {
+            <p>
+                Veuillez vous authentifier :
+            </p>
+            using (Html.BeginForm())
+            {
+                <div>
+                    @Html.LabelFor(m => m.Utilisateur.utilisateur_email)
+                    @Html.TextBoxFor(m => m.Utilisateur.utilisateur_email)
+                    @Html.ValidationMessageFor(m => m.Utilisateur.utilisateur_email)
+                </div>
+                <div>
+                    @Html.LabelFor(m => m.Utilisateur.mot_de_passe)
+                    @Html.PasswordFor(m => m.Utilisateur.mot_de_passe)
+                    @Html.ValidationMessageFor(m => m.Utilisateur.mot_de_passe)
+                </div>
+                <input type="submit" value="Se connecter" />
+                <br />
+                @Html.ActionLink("Créer un compte", "CreerCompte")
+            }
+        }
+    </div>
+</body>
+

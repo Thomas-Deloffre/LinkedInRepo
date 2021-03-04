@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/Content/Styles/bootstrap.css">
+    <link rel="stylesheet" href="~/Content/Styles/style.css" />
+    <title>@ViewBag.Title</title>
+</head>
+
+<header class="fixedtop">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-1">
+            </div>
+            <div class="col-6">
+                <div>
+                    <h4>Bienvenue sur Praya</h4>
+                </div>
+                <div class="col">
+                    <nav class="fixedtopleft">
+                        <ul>
+                            <li><a href="#">Catalogue</a></li>
+                            <li><a href="#">Rechercher</a></li>
+                            <li><a href="#">Créer Projet</a></li>
+                            <li><a href="#">Connexion</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="logo">
+    <a href="/">
+        <img src="~/Content/Images/Logo_praya_fond0.png" border="1" border-color="black" alt="Logo de Praya" />
+    </a>
+</div>
+
+<body>
+    <div class="vide"></div>
+    @RenderBody()
+</body>
+
+
+
+
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <div id="a_propos">
+                    <h1>A propos</h1>
+                    <p><a class="footerblabla" href="maito:contact@praya.fr">Contactez nous</a></p>
+                    <p><a class="footerblabla" href="#">Qui sommes nous</a></p>
+                </div>
+            </div>
+            <div class="col-5">
+                <div id="Aide">
+                    <h1>Comment ça marche</h1>
+                    <div id="listes_sujets_2">
+                        <p><a class="footerblabla" href="#">Donation</a></p>
+                        <p><a class="footerblabla" href="#">Gestion de projet</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div>
+                    <h1>Suivez nous</h1>
+                    <p>
+                        <img src="~/Content/Images/facebook.png" alt="Facebook" />
+                        <img src="~/Content/Images/twitter.png" alt="Twitter" />
+                        <img src="~/Content/Images/vimeo.png" alt="Vimeo" />
+                        <img src="~/Content/Images/flickr.png" alt="Flickr" />
+                        <img src="~/Content/Images/rss.png" alt="RSS" />
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>

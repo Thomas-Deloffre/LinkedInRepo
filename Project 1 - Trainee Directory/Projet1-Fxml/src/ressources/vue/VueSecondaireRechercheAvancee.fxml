@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="954.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="421.0" prefWidth="924.0" style="-fx-border-color: black; -fx-border-width: 0.2; -fx-background-color: #b0e0e6;" stylesheets="@MyTheme.css">
+         <children>
+            <TitledPane animated="false" prefHeight="32.0" prefWidth="924.0" text="Recherche Avancée - Profils Stagiaires" />
+            <Button fx:id="validateBtn" layoutX="608.0" layoutY="353.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="101.0" text="Valider" />
+            <Button fx:id="resetBtn" layoutX="435.0" layoutY="353.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="87.0" text="Reset" />
+            <Label layoutX="40.0" layoutY="68.0" prefHeight="21.0" prefWidth="60.0" text="Nom">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="178.0" prefHeight="21.0" prefWidth="101.0" text="Departement">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="278.0" prefHeight="21.0" prefWidth="60.0" text="Année">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="547.0" layoutY="71.0" prefHeight="21.0" prefWidth="81.0" text="Prenom">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="547.0" layoutY="178.0" prefHeight="21.0" prefWidth="81.0" text="Formation">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="departementComboB" layoutX="205.0" layoutY="175.0" prefHeight="31.0" prefWidth="186.0" promptText="Non Spécifié" />
+            <ComboBox fx:id="anneeComboB" layoutX="205.0" layoutY="275.0" prefHeight="31.0" prefWidth="186.0" promptText="Non Spécifié" />
+            <ComboBox fx:id="formationComboB" layoutX="689.0" layoutY="175.0" prefHeight="31.0" prefWidth="186.0" promptText="Non Spécifié" />
+            <TextField fx:id="nomTextField" layoutX="205.0" layoutY="68.0" />
+            <TextField fx:id="prenomTextField" layoutX="689.0" layoutY="68.0" />
+            <Button fx:id="closeRechBtn" layoutX="782.0" layoutY="353.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="101.0" text="Quitter" />
+         </children>
+      </Pane>
+   </children>
+</Pane>

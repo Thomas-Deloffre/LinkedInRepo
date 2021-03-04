@@ -1,0 +1,74 @@
+.button {
+    -fx-padding: 5 22 5 22;   
+	-fx-border-radius: 4;
+    -fx-border-color: #e2e2e2;
+    -fx-border-width: 2.5;
+    -fx-background-radius: 4;
+    -fx-background-color: ;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 11pt;
+    -fx-text-fill: #1d1d1d;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+
+.button:focused {
+    -fx-border-color: white, white;
+    -fx-border-radius: 4;
+	-fx-background-radius: 4;
+	-fx-border-width: 1, 1;
+    -fx-border-style: solid, segments(1, 1);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+
+.button:disabled, .button:default:disabled {
+    -fx-opacity: 0.4;
+	-fx-border-radius: 4;
+	-fx-background-radius: 4;
+    -fx-background-color: #1d1d1d;
+    -fx-text-fill: white;
+}
+
+.button:default {
+    -fx-background-color: 
+	-fx-focus-color;
+	-fx-border-radius: 4;
+	-fx-background-radius: 4;
+    -fx-text-fill: #ffffff;
+}
+
+.button:default:hover {
+	-fx-background-color: derive(-fx-focus-color,30%);
+	-fx-border-radius: 4;
+	-fx-background-radius: 4;
+}
+
+.button:hover {
+    -fx-background-color: #f8f8f8;
+	-fx-border-radius: 4;
+	-fx-background-radius: 4;
+	-fx-text-fill: #6bbed3; 
+}
+
+#validateBtn:hover, #validBtn:hover, #createBtn:hover {
+    -fx-background-color: #0AACC0;
+	-fx-border-radius: 4;
+	-fx-background-radius: 4;
+	-fx-text-fill: white;
+}
+
+.button:pressed, .button:default:hover:pressed {
+  -fx-border-radius: 4px;
+  -fx-background-radius: 4;
+  -fx-background-color: black;
+  -fx-text-fill: white;
+}
+
+#validateBtn:pressed, #validateBtn:default:hover:pressed, #validBtn:pressed, #validBtn:default:hover:pressed, #createBtn:pressed, #createBtn:default:hover:pressed{
+  -fx-border-radius: 4px;
+  -fx-background-radius: 4;
+  -fx-background-color: #0AACC0;
+  -fx-text-fill: #6bbed3;
+}
+
+

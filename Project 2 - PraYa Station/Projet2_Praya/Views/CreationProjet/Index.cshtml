@@ -1,0 +1,83 @@
+﻿@model Projet2_Praya.Models.association
+@{
+    ViewBag.Title = "Création de Projet : Association";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <section class="bodytitreavant">
+                <div>
+                    <h1 class="titrecatalogue">Formulaire de création de projet</h1>
+                </div>
+            </section>
+
+            <section>
+                <div>
+                    <h2 class="titrecatalogue"> Informations sur l'association </h2>
+                </div>
+            </section>
+
+            <div>
+                <div>
+                    <label for="AssoName">Nom de l'association</label>
+                </div>
+                @Html.TextBoxFor(model => model.nom_association)
+            </div>
+
+            <div>
+                <br />
+            </div>
+
+            @** <div>
+                    @{
+                        ViewBag.Title = "Selectionnez votre type";
+
+                    }
+
+                    @using (Html.BeginForm())
+                    {
+
+                        <fieldset>
+                            Type de Projet
+
+                            @Html.DropDownList("TypesProjet")
+
+                            <br />
+                        </fieldset>
+                    }
+
+                    <div>
+                        <br />
+                    </div>
+                </div>
+            *@
+
+            <div class="xxxxxxxx">
+                <label for="RNAinput">RNA</label>
+                <div class="mw-input">
+                    @Html.TextBoxFor(model => model.RNA)
+                </div>
+            </div>
+
+            <div class="xxxxxxxx">
+                <label for="IBANinput">IBAN</label>
+                <div class="mw-input">
+                    @Html.TextBoxFor(model => model.IBAN)
+                </div>
+                @Html.ValidationMessageFor(model => model.IBAN)
+            </div>
+
+
+            <div>
+                <br />
+            </div>
+
+            <input class="xxxxxxx" type="submit" value="Présenter votre projet !" />
+        }
+    </div>
+
+</body>
+
