@@ -1,0 +1,284 @@
+<!DOCTYPE HTML>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<link href="/docs/5.0/assets/css/docs.css" rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" th:href="@{css/MainStyleCinemArt.css}">
+
+<title>Cinemart, la plateforme de financement participatif des
+	projets audiovisuels!</title>
+
+
+
+<script src="/assets/js/ie/respond.min.js"></script>
+<script src="script.js"></script>
+<script async src="/assets/js/bundle.js?ver=146"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
+	type=""></script>
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
+	type=""></script>
+
+
+</head>
+<body>
+
+	<!-- Header -->
+	<header>
+		<div th:replace="header :: myHeader"></div>
+	</header>
+<body>
+
+	<div class="container">
+		<br /> <br /> <br /> <br></br> 
+
+		<div class="alert alert-warning alert-dismissible" role="alert">		
+			Cette section contient de nombreuses informations utiles pour vous
+			aider au mieux dans l'utilisation de notre plateforme de financement
+			participative
+			<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+				<span class="sr-only">Close</span>
+			</button>
+		</div>
+
+		<br />
+
+		<div class="faqHeader">Questions Générales</div>
+		<div class="accordion accordion-flush" id="accordionFlushExample">
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingOne">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+						aria-expanded="false" aria-controls="flush-collapseOne">
+						Créer un compte est-il obligatoire ?</button>
+				</h2>
+				<div id="flush-collapseOne" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingOne"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">Non, naviguer sur le site ne
+						requiert pas de créer un compte. En revanche, la créatio de compte
+						est requise pour nous soumettre votre projet ou pour faire une
+						donation à un projet.</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingTwo">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+						aria-expanded="false" aria-controls="flush-collapseTwo">
+						Suis-je obligé de renseigner mon numéro de carte bancaire à la
+						création de mon compte ?</button>
+				</h2>
+				<div id="flush-collapseTwo" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingTwo"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">Non, aucun identifiant bancaire
+						ne vous sera demandé à la création de votre compte. en revanche,
+						un rib ou une carte bancaire vous seront demandés, respectivement
+						à la création d'un projet ou lors d'une donation.</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingThree">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+						aria-expanded="false" aria-controls="flush-collapseThree">
+						Quelle est la monnaie utilisée pour toutes les transactions sur ce
+						site ?</button>
+				</h2>
+				<div id="flush-collapseThree" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingThree"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">Toutes les transactions sur la
+						plateforme Cinem'Art se font en Euros.</div>
+				</div>
+			</div>
+		</div>
+
+		<br />
+
+		<div class="faqHeader">Je suis gestionnaire ou futur
+			gestionnaire de projet</div>
+		<div class="accordion accordion-flush" id="accordionFlushExample">
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingFour">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
+						aria-expanded="false" aria-controls="flush-collapseFour">
+						Quels sont les types de projet acceptés ?</button>
+				</h2>
+				<div id="flush-collapseFour" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingFour"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">Tous les projets soutenus par des
+						entrepreneurs indépendants et traitant de cinématographie. Les
+						projets doivent contenir une présentation complète, ainsi que des
+						supports videos / audi attestant de leur caractère
+						cinematographique.</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingFive">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
+						aria-expanded="false" aria-controls="flush-collapseFive">
+						Quels sont les justificatifs demandés pour la publication d'un
+						projet sur Cinem'Art ?</button>
+				</h2>
+				<div id="flush-collapseFive" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingFive"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">Il vous sera demandé à minima un
+						justificatif d'identité (Carte d'identité ou passeport) valide, un
+						justificatif de domicile ainsi qu'un Relevé d'Identité Bancaire.</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingSix">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseSix"
+						aria-expanded="false" aria-controls="flush-collapseSix">
+						Si mon projet n'est pas validé après la soumission, que dois-je
+						faire ?</button>
+				</h2>
+				<div id="flush-collapseSix" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingSix"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">Si un projet est jugé valide sur
+						le fond mais non valide sur la forme, il est renvoyé à son
+						gestionnaire pour révision et re-soumission. Si le projet soumis
+						est jugé invalide sur le fond, il est signalé comme rejeté de la
+						part de l'administrateur, et un nouveau projet devra être soumis.
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingSeven">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven"
+						aria-expanded="false" aria-controls="flush-collapseSeven">
+						Quel est le montant maximal que je puisse demander / percevoir
+						pour une campagne ?</button>
+				</h2>
+				<div id="flush-collapseSeven" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingSeven"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">Les gains maximums autorisés sur
+						Cinem'Art sont d'un million d'euros. Au delà de ce montant, les
+						fonds additionnels seront bloqués.</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingHeight">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseHeight"
+						aria-expanded="false" aria-controls="flush-collapseHeight">
+						Que se passe t-il si le montant excède le montant prévisionnel de
+						ma cagnotte ?</button>
+				</h2>
+				<div id="flush-collapseHeight" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingHeight"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">Si un projet dépasse le montant
+						demandé avant sa publication, les fonds continueront d'être
+						incrémentés et le gestionnaire de projet recevra la totalité de la
+						somme récoltée à l'issu de sa campagne.</div>
+				</div>
+			</div>
+		</div>
+
+		<br />
+
+		<div class="faqHeader">Je suis un donateur ou futur donateur</div>
+		<div class="accordion accordion-flush" id="accordionFlushExample">
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingNine">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseNine"
+						aria-expanded="false" aria-controls="flush-collapseNine">
+						Quels sont les moyens de paiment disponibles ?</button>
+				</h2>
+				<div id="flush-collapseNine" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingNine"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">Vous pouvez faire un don via
+						carte bancaire, ou compte paypal.</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingTen">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseTen"
+						aria-expanded="false" aria-controls="flush-collapseTen">
+						Quel est le montant minimum que je puisse donner ?</button>
+				</h2>
+				<div id="flush-collapseTen" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingTen"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">Le montant minimum d'un don sur
+						Cinem'Art est de 1 euro.</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingEleven">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseEleven"
+						aria-expanded="false" aria-controls="flush-collapseEleven">
+						Mes dons sont-ils déductibles des impôts ?</button>
+				</h2>
+				<div id="flush-collapseEleven" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingEleven"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">Tous les dons effectués sur
+						Cinem'Art fournissent un justificatif au donateur et sont donc
+						déductibles d'impôts.</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br />
+	<br />
+
+	<div class="container">
+		<div class="accordion accordion-flush" id="accordionFlushExample">
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingTwelve">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve"
+						aria-expanded="false" aria-controls="flush-collapseTwelve">
+						Pas de réponse à vos questions ?</button>
+				</h2>
+				<div id="flush-collapseTwelve" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingTwelve"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">Contactez-nous pour nous les
+						poser directement !</div>
+					<br> <a class="button big alt" href="#" role="button">Contact</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+		crossorigin="anonymous"></script>
+</body>
+
+<!-- Footer -->
+<footer>
+	<div th:replace="footer :: myFooter"></div>
+</footer>
+
+</html>

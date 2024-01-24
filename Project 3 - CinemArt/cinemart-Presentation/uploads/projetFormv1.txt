@@ -1,0 +1,289 @@
+<!DOCTYPE HTML>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" th:href="@{css/MainStyleCinemArt.css}">
+
+<title>CINEM'ART - plateforme de collecte de fonds pour des
+	cinéastes</title>
+
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+<script src="/assets/js/ie/respond.min.js"></script>
+<script src="script.js"></script>
+<script async src="/assets/js/bundle.js?ver=146"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
+	type=""></script>
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
+	type=""></script>
+
+</head>
+<body>
+
+	<!-- Header -->
+	<header>
+		<div th:replace="header :: myHeader"></div>
+	</header>
+
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="index.html"
+				style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Qui
+					sommes nous ?</a></li>
+			<li><a href="generic.html"
+				style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Projets</a></li>
+			<li><a href="elements.html"
+				style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Nos
+					Partenaires</a></li>
+			<li><a href="elements.html"
+				style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Connectez
+					Vous</a></li>
+		</ul>
+	</nav>
+
+	<!-- Banner -->
+	<!--
+				To use a video as your background, set data-video to the name of your video without
+				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+				formats to work correctly.
+			-->
+	<section class="container startBody">
+		<div class="big-padding">
+			<div>
+				<h2>Présentez nous votre projet !</h2>
+				<p>Ce formulaire complet vous permettra de nous décrire votre
+					projet. Il nous permettra de l'évaluer afin de le valider puis de
+					le publier sur notre plateforme et ainsi lui permettre de reçevoir
+					des dons !</p>
+			</div>
+			<!-- <a href="#main" class="button big alt scrolly">Passez au
+				formulaire</a> -->
+		</div>
+
+	</section>
+
+	<!-- Main -->
+	<div id="main">
+
+		<!-- One -->
+
+		<div class="container"></div>
+		<div id="exTab3" class="container">
+			<ul class="nav nav-pills">
+				<li class="active"><a href="#1b" data-toggle="tab"><h4>Le
+							gestionnaire de projet</h4></a></li>
+				<li><a href="#2b" data-toggle="tab"><h4>La nature du
+							projet</h4></a></li>
+				<li><a href="#3b" data-toggle="tab"><h4>Les médias</h4></a></li>
+				<li><a href="#4b" data-toggle="tab"><h4>Les documents
+							administratifs</h4></a></li>
+			</ul>
+
+			<form action=action= "#"  th:action="@{/soumissionProjet}"
+				th:object="${projetForm}" method="post"
+				enctype="multipart/form-data">
+				<div class="tab-content clearfix">
+					<div class="tab-pane active" id="1b">
+						<h4>Voici les informations relatives à votre statut de
+							créateur</h4>
+						<div>
+							<!-- 
+							<label>Nom</label> <input type="text" name="name">
+							
+							<label>Prénom</label> <input type="text" name="forname">
+														
+							<label>Pseudo</label> <input type="text" name="pseudo">
+							
+							<label>Email</label> <input type="text" name="email"> -->
+
+
+							<br>
+
+							<div class="container">
+								<div class="row justify-content-center">
+									<input class="boutonInput" type="reset"
+										value="Réinitialiser les champs" />
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="tab-pane" id="2b">
+						<h4>Décrivez nous votre projet !</h4>
+
+
+						<label>Titre</label> <input type="text" name="titre"
+							th:field="*{titre}"> <br> <label>Description
+							du Projet</label> <input type="text" name="courtedescription"
+							th:field="*{courteDescription}"> <br>
+
+						<div class="form-group row">
+							<label for="numberInput" class="col-2 col-form-label">Montant
+								de Cagnotte Souhaitée</label>
+							<div class="col-10">
+								<input class="form-control" type="number" id="montantDemande"
+									name="montantDemande" th:field="*{montantDemande}">
+							</div>
+
+
+							<div class="field-Form">
+								<select name="catTest" class="selectpicker"
+									title="Choisissez une catégorie">
+									<option value="0">Choisissez une catégorie</option>
+									<option
+										th:each="catOpt : ${T(fr.isika.cdi07.model.projet.ProjetCategorieTest).values()}"
+										th:value="${catOpt}" th:text="${catOpt.displayValue}"></option>
+								</select>
+							</div>
+							<div class="field-Form">
+								<select name="genreMain" class="selectpicker"
+									title="Choisissez au moins un genre principal ">
+									<option value="0">Choisissez au moins un genre principal</option>
+									<option
+										th:each="genreMOpt : ${T(fr.isika.cdi07.model.projet.ProjetGenres).values()}"
+										th:value="${genreMOpt}" th:text="${genreMOpt.displayVal}"></option>
+								</select>
+							</div>
+							<div class="field-Form">
+								<select name="genreAlt" class="selectpicker"
+									title="Choisissez un genre secondaire (optionnel)">
+									<option value="0">Choisissez un genre secondaire (optionnel)</option>
+									<option
+										th:each="genreAOpt : ${T(fr.isika.cdi07.model.projet.ProjetGenres).values()}"
+										th:value="${genreAOpt}" th:text="${genreAOpt.displayVal}"></option>
+								</select>
+							</div>
+
+
+							<div class="field-Form">
+								<label for="FormControlTextarea">Présentation du Projet</label>
+								<textarea class="Textarea" id="FormControlTextarea" rows="15"
+									name=longueDescription th:field="*{longueDescription}"></textarea>
+							</div>
+
+							<div class="field-Form">
+								<br> <label for="basic-url" class="form-label">Weblink</label>
+								<div class="input-group mb-3">
+									<span class="input-group-text" id="basic-addon3">https://</span>
+									<input type="text" class="form-control" id="basic-url"
+										aria-describedby="basic-addon3" name=webLink
+										th:field="*{webLink}">
+
+								</div>
+							</div>
+							<div>
+								<br> <br>
+								<div class="container">
+									<div class="row justify-content-center">
+										<input class="boutonInput" type="reset"
+											value="Réinitialiser les champs" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="tab-pane" id="3b">
+						<h4>Ajoutez des médias pour rendre votre projet plus
+							attrayant !</h4>
+						<div>
+
+							<!-- 	<div class="field-Form">
+								<p th:text="${message}" th:if="${message ne null}"
+									class="alert alert-primary"></p>
+
+								<div class="form-group">
+									<input type="file" name="document" class="form-control-file">
+								</div>
+							 -->
+
+						</div>
+					</div>
+
+
+
+					<div class="tab-pane" id="4b">
+						<h4>Vous y êtes presque ! Fournissez nous les documents
+							nécessaires à la publication de votre projet</h4>
+						<div>
+
+							<div class="field-Form">
+								<label for="FormControlTextarea">Carte d'identité</label>
+								<p th:text="${message}" th:if="${message ne null}"
+									class="alert alert-primary"></p>
+
+								<div class="form-group">
+									<input type="file" name="document" class="form-control-file">
+								</div>
+
+
+								<div class="field-Form">
+									<label for="FormControlTextarea">Relevé d'identité
+										bancaire</label>
+									<p th:text="${message}" th:if="${message ne null}"
+										class="alert alert-primary"></p>
+
+									<div class="form-group">
+										<input type="file" name="document" class="form-control-file">
+									</div>
+
+
+									<div class="field-Form">
+										<label for="FormControlTextarea">Justificatif de
+											domicile</label>
+										<p th:text="${message}" th:if="${message ne null}"
+											class="alert alert-primary"></p>
+
+										<div class="form-group">
+											<input type="file" name="document" class="form-control-file">
+										</div>
+
+										<br>
+										<div class="field-Form">
+											<div class="container-fluid">
+												<input class="boutonInput" type="reset"
+													value="Réinitialiser les champs" />
+											</div>
+										</div>
+										<br>
+									</div>
+									<div class="field-Form">
+										<div class="container-fluid">
+											<div class="row justify-content-center">
+												<input class="boutonInput" type="submit"
+													value="Soumettre le projet" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			</form>
+		</div>
+	</div>
+
+
+
+
+	<!-- Footer -->
+	<footer>
+		<div th:replace="footer :: myFooter"></div>
+	</footer>
+
+
+
+</body>
+</html>

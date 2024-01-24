@@ -1,0 +1,313 @@
+.mainBanniere{
+	background-color: black;
+	color: gold;
+	height: 60px;
+	display: flex;
+	justify-content: space-between;
+}
+.largeBox{
+	height: 60px;
+	width: 300px;
+}
+.largeBox:hover{
+	background-color: gold;
+	color: black;
+}
+.marginTop{
+	margin-top:120px;
+}
+.formConnectionBox{
+	margin-left:30%;
+	width:40%;
+	min-height:200px;
+}
+.formHead{
+	margin-top: 20px;
+	height: 60px;
+	width:100%;
+	background-color: rgb(4,19,33);
+	color: gold;
+	font-size:32px;
+	font-weight: bold;
+	text-align: center;
+}
+.divWithLabelInput{
+	display: flex;
+	min-width: 500px;
+	margin:auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	justify-content: center;
+}
+.labelForInput{
+	min-width: 300px;
+	width:60%;
+	font-size: 28px;
+	font-weight:normal;
+	text-align:end;
+	color: gold;
+}
+.inputWithLabel{
+	margin:5px;
+	min-width: 200px;
+	max-width:60%;
+}
+.msgInfoForm{
+	margin:5px;
+	height: 45px;
+	line-height: 45px;
+	text-align:center;
+	color:red;
+	font-style: italic;
+}
+.divSubmit{
+	display:flex;
+	justify-content: center;
+	
+}
+input::placeholder{
+  color: gold;
+}
+.flBxCenter{
+	display: flex;
+	justify-content: center;
+}
+.topRound{
+	border-radius:15px;
+}
+.backProfil{
+	margin-top:55px;
+	min-width: 500px;
+	min-height: 600px;
+}
+.boxProfil{
+	min-height:550px;
+	width: 70%;
+	margin:auto;
+	margin-top:100px;
+	background-color: rgb(4,19,33);
+	border-radius: 15px;
+}
+.barreOngletsProfil{
+	height: 60px;
+	background-color: rgb(23, 37, 50);
+	width: 100%;
+	display:flex;
+	justify-content: flex-start;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+.ongletsProfil{
+	min-width: 150px;
+	padding-left:5px;
+	padding-right:5px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	color:gold;
+	font-size: 28px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+.submitModifier{
+	background-color: rgb(105, 0, 0);
+}
+.submitValider{
+	background-color: rgb(0, 105, 105);
+}
+.boxHeader{
+	height:80px;
+	line-height:80px;
+	width: 400px;
+	text-align: center;
+	font-size: 32px;
+}
+.banniereHeader{
+	height: 80px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.boxRecherche{
+	margin-top:15px;
+	width: 100%;
+	display: flex;
+}
+.corpsInformations{
+	margin-top: 180px;
+}
+.tableProjets{
+	margin-top:20px !important;
+	width: 80% !important;
+	margin: auto;
+	border-radius: 10px !important;
+}
+.adminTitle{
+	margin-left:100px;
+	height:30px;
+	line-height: 30px;
+	font-size: 28px;
+}
+.adminGestion{
+	width: 500px !important;
+	height:60px;
+	line-height: 60px;
+	margin:auto !important;
+	display : flex;
+	justify-content: center;
+}
+.adminGestionBox{
+	margin-left:5px;
+	margin-right:5px;
+}
+.adminComment{
+	width: 55% !important;
+}
+.adminBtn{
+	width: 20% !important;
+}
+.navPillCreaProjetMain{
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+}
+.navPillCreaProjet{
+	color: gold !important;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 15px;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+}
+.messageSupportBox{
+	margin:auto;
+	min-width: 500px;
+	width: 40%;
+	min-height: 550px;
+}
+donationBox {
+	margin:auto;
+	min-width: 500px;
+	width: 40%;
+	min-height: 350px;
+}
+.intituleMessageSupport{
+	margin:auto;
+	height: 70px;
+	line-height: 60px;
+	width: 80%;
+	display: flex;
+	justify-content: start !important;
+	font-size: 24px;
+}
+.textIntitule{
+	width: 30%;
+	margin-left:10px !important;
+}
+.foreTitle {
+	padding-left: 15px;
+}
+.inputIntitule{
+	width: 60%;
+	margin-left:10px;
+}
+.textAreaMsgSupport{
+	resize: none;
+	line-height:20px;
+	height: 400px;
+	width: 90%;
+	border-radius: 10px;
+	padding: 15px;
+	vertical-align: top;
+}
+.submitMsgSupport{
+	min-width:100px;
+	height:40px;
+	margin-left:35%;
+	margin-top:15px;
+}
+.field-Form{
+	padding-top: 30px;
+}
+.btnTraitement{
+	height: 50px !important;
+	line-height:50px !important;
+	min-width: 100px !important;
+	max-width: 400px !important;
+	font-size: 20px;
+}
+.aMargin{
+	margin-left:auto;
+	margin-right:auto;
+	padding-left: 200px;
+}
+.fontS24{
+	font-size: 24px !important;
+}
+.alert-warning {
+	
+	background-color: #222A5A !important;
+	border-color: #FFECB5;
+	color: white;
+}
+.site-search{
+	color:black !important;
+}
+.faireUnDon{
+	min-width : 300px;
+	width :40%;
+	margin:auto;
+	margin-top:20px;
+	display:flex;
+	justify-content: space-between;
+}
+.faireUnDonTitre{
+	padding-top: 10px;
+	min-width: 200px;
+	width: 60%;
+	text-align: center;
+}
+.faireUnDonInput{
+	min-width: 100px;
+	width: 40%;
+}
+@import url(//fonts.googleapis.com/css?family=Montserrat:300,500);
+.team4 {
+  font-family: "Montserrat", sans-serif;
+	color: #8D97AD;
+  font-weight: 300;
+}
+.team4 h1, .team4 h2, .team4 h3, .team4 h4, .team4 h5, .team4 h6 {
+  color: #3E4555;
+}
+.team4 .font-weight-medium {
+	font-weight: 500;
+}
+.team4 h5 {
+    line-height: 22px;
+    font-size: 18px;
+}
+.team4 .subtitle {
+    color: #8D97AD;
+    line-height: 24px;
+		font-size: 13px;
+}
+.team4 ul li a {
+  color: #8D97AD;
+  padding-right: 15px;
+  -webkit-transition: 0.1s ease-in;
+  -o-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+.team4 ul li a:hover {
+  -webkit-transform: translate3d(0px, -5px, 0px);
+  transform: translate3d(0px, -5px, 0px);
+	color: #316CE8;
+}
+.tableLong{
+	width: 85% !important;
+}
+.btnTd{
+	width: 100px;
+	height: 20px;
+	line-height: 20px;
+}

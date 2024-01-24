@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" th:href="@{css/MainStyleCinemArt.css}">
+<title>CINEM'ART - plate-forme de collecte de fonds pour des
+	cinéastes</title>
+</head>
+<body>
+	<!-- Header -->
+	<header th:fragment="myHeaderAdmin" id="header" style="height: 75px;">
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<!-- <div class="container" style="height: 30px;">
+					<img src="images/C ART_LogoYellow.png">
+				</div> -->
+		<div class="banniereHeader">
+			<div class="boxHeader">
+				<!-- <a href="#"><span id="cinemart">CINEM'ART</span></a> -->
+				<a href="/admin">CINEM'ART</a>
+			</div>
+			<div class="boxHeader">ADMINISTRATION</div>
+			<div class="boxHeader">
+				<a href="#menu">Menu</a>
+				<!-- Nav -->
+			</div>
+		</div>
+		<nav id="menu">
+			<ul class="links">
+				<a href="/adminProfil"><li th:text="${MenuFirstItem}">Inscription</li></a>
+				<br>
+				<a th:href="@{'http://localhost:8080/' + ${MenuSecondLien}}"><li
+					th:text="${MenuSecondItem}">Connexion</li></a>
+				<br>
+				<a href="/adminMessage"><li>Messages supports</li></a>
+				<br>
+			</ul>
+		</nav>
+	</header>
+</body>
+</html>

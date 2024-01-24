@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>CINEM'ART - plate-forme de collecte de fonds pour des
+	cinéastes</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" th:href="@{css/MainStyleCinemArt.css}">
+<script src="https://kit.fontawesome.com/93f6784514.js"
+	crossorigin="anonymous"></script>
+</head>
+<body>
+	<header>
+		<div th:replace="header :: myHeader"></div>
+	</header>
+	<!-- Main -->
+	<section class="wrapper style1">
+		<div class="container-fluid text-center" style="margin-top: 100px;">
+			<div class="row" style="background-color: rgba(0, 0, 0, 0.12);">
+				<div class="col text-center">
+					<h5 th:text="${projet.titre}">Film</h5>
+					<h5 th:text="' de l\'utilisateur ' + ${projet.utilisateur.pseudo} ">de
+						Brigitte Bertrand</h5>
+				</div>
+			</div>
+		</div>
+		
+		<div class="inner">
+			<form method="post" action="/validerDon">
+				<div class="faireUnDon">
+					<div class="faireUnDonTitre">
+						<h1>FAIRE UN DON</h1>
+					</div>
+					<div class="faireUnDonInput">
+						<input type="text" name="montantDon" />
+					</div>
+				</div>
+				<br/><br/>
+				<input class="favorite styled" type="button" id="jannule"
+					value="Etape précédente"
+					style="margin-top: -15px; margin-left: 10%; margin-right: 10%; font-size: 1.5em; width: 36%;">
+				<input class="favorite styled" type="submit" id="jesoutiens"
+					value="Je soutiens"
+					style="margin-top: -15px; font-size: 1.5em; width: 36%; background-color: #AA14CC;">
+			</form>
+		</div>
+	</section>
+	<footer>
+		<div th:replace="footer :: myFooter"></div>
+	</footer>
+</body>
+</html>

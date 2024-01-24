@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" th:href="@{css/MainStyleCinemArt.css}">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cinem'Art - Accueil</title>
+</head>
+<body>
+	<header>
+		<div th:replace="header :: myHeader"></div>
+	</header>
+	<!-- Main -->
+	<!-- Banner -->
+	<!--
+				To use a video as your background, set data-video to the name of your video without
+				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+				formats to work correctly.
+			-->
+	<section id="banner" data-video="medias/Argentina">
+		<div class="inner">
+			<div>
+				<div>
+					<h1>Cinem'Art</h1>
+				</div>
+				<div>
+					<p>
+						Plateforme de financement participatif de la création artistique
+						et cinématographique<br /> Faites financer votre projet ou
+						permettez la création artistique en faisant un don !
+					</p>
+				</div>
+
+			</div>
+			<a href="/catalogue" class="button big alt scrolly">Découvrez les
+				projets</a>
+		</div>
+	</section>
+	<!-- Main -->
+	<div id="main">
+		<!-- One -->
+		<section class="wrapper style1">
+			<div class="inner">
+				<!-- 2 Column Video Section -->
+				<div class="flex flex-2">
+					<div class="video col">
+						<p class="caption">
+							La plateforme Cinem'Art a été créée en 2017 pour permettre le
+							financement participatif de projet ayant trait à la création
+							artistique cinématographique.<br />
+							<br /> Cinéaste amateur ou déjà professionnel ? Déposez votre
+							projet pour obtenir des financements.<br />
+							<br /> Amateurs de création audiovisuelle ? Soutenez des projets
+							qui vous intéressent en faisant un don !<br />
+
+						</p>
+					</div>
+					<div class="video col">
+						<p class="caption">
+							<b>Cinem'Art c'est... </b><br />
+							<br />122 projets financés depuis sa création<br />
+							<br /> 517 membres inscrits<br />
+							<br />127 000 euros récoltés au total
+						</p>
+					</div>
+				</div>
+		</section>
+		<!-- Two -->
+		<section class="wrapper style2">
+			<div class="inner">
+				<header>
+					<h2>Découvrez les projets en cours de campagne !</h2>
+
+				</header>
+				<!-- Tabbed Video Section -->
+				<div class="flex flex-tabs">
+					<ul class="tab-list">
+						<li><a href="#" data-tab="tab-1" class="active">Les plus
+								récents</a></li>
+						<li><a href="#" data-tab="tab-2">Les plus populaires</a></li>
+						<li><a href="#" data-tab="tab-3">Dernière ligne droite</a></li>
+						<li><a href="#" data-tab="tab-4">Ils ont besoin de vous</a></li>
+						<li><a href="#" data-tab="tab-5">Découvrez des projets au
+								hasard</a></li>
+					</ul>
+					<div class="tabs">
+						<!-- Tab 1 -->
+						<div class="tab tab-1 flex flex-3 active">
+							<!-- Video Thumbnail -->
+							<div class="video col" th:each="projet : ${listNew}">
+								<div class="image fit">
+									<img th:src="@{'projet/image/' + ${projet.idProjet}}"
+										alt="imageProjet" />
+									<div class="arrow"></div>
+									<h1 th:text="${projet.titre}"></h1>
+									<p th:text="${projet.courteDescription}"></p>
+								</div>
+								<a
+									th:href="@{'http://localhost:8080/page_projet?idProjet=' + ${projet.idProjet}}"
+									th:text="'Fiche Projet'" />
+							</div>
+						</div>
+						<!-- Tab 3 -->
+						<div class="tab tab-3 flex flex-3">
+							<!-- Video Thumbnail -->
+							<div class="video col" th:each="projet : ${listOld}">
+								<div class="image fit">
+									<img th:src="@{'projet/image/' + ${projet.idProjet}}"
+										alt="imageProjet" />
+									<div class="arrow"></div>
+									<h1 th:text="${projet.titre}"></h1>
+									<p th:text="${projet.courteDescription}"></p>
+								</div>
+								<a
+									th:href="@{'http://localhost:8080/page_projet?idProjet=' + ${projet.idProjet}}"
+									th:text="'Fiche Projet'" />
+							</div>
+						</div>
+
+						<!-- Tab 4 -->
+						<div class="tab tab-4 flex flex-3">
+							<!-- Video Thumbnail -->
+							<div class="video col" th:each="projet : ${listHelp}">
+								<div class="image fit">
+									<img th:src="@{'projet/image/' + ${projet.idProjet}}"
+										alt="imageProjet" />
+									<div class="arrow"></div>
+									<h1 th:text="${projet.titre}"></h1>
+									<p th:text="${projet.courteDescription}"></p>
+								</div>
+								<a
+									th:href="@{'http://localhost:8080/page_projet?idProjet=' + ${projet.idProjet}}"
+									th:text="'Fiche Projet'" />
+							</div>
+						</div>
+
+						<!-- Tab 5 -->
+						<div class="tab tab-5 flex flex-3">
+							<!-- Video Thumbnail -->
+							<div class="video col" th:each="projet : ${listRandom}">
+								<div class="image fit">
+									<img th:src="@{'projet/image/' + ${projet.idProjet}}"
+										alt="imageProjet" />
+									<div class="arrow"></div>
+									<h1 th:text="${projet.titre}"></h1>
+									<p th:text="${projet.courteDescription}"></p>
+								</div>
+								<a
+									th:href="@{'http://localhost:8080/page_projet?idProjet=' + ${projet.idProjet}}"
+									th:text="'Fiche Projet'" />
+							</div>
+						</div>
+						<!-- 		tab-2 a remplacer avec liste moins de dons-->
+						<div class="tab tab-2 flex flex-3">
+							<!-- Video Thumbnail -->
+							<div class="video col">
+								<div class="image fit">
+									<img src="images/pic03.jpg" alt="" />
+									<div class="arrow"></div>
+									<h1>TitreX du projet</h1>
+									<p>Courte description pour donner envie de cliquer et
+										découvrir le projet plus en détail</p>
+								</div>
+								<a href="page_projet.html" class="link"><span>Click
+										Me</span></a>
+							</div>
+							<!-- Video Thumbnail -->
+							<div class="video col">
+								<div class="image fit">
+									<img src="images/pic02.jpg" alt="" />
+									<div class="arrow"></div>
+									<h1>Titre du projet</h1>
+									<p>Courte description pour donner envie de cliquer et
+										découvrir le projet plus en détail</p>
+								</div>
+								<a href="generic.html" class="link"><span>Click Me</span></a>
+							</div>
+							<!-- Video Thumbnail -->
+							<div class="video col">
+								<div class="image fit">
+									<img src="images/picMika.jpg" alt="" />
+									<div class="arrow"></div>
+									<h1>Titre du projet</h1>
+									<p>Courte description pour donner envie de cliquer et
+										découvrir le projet plus en détail</p>
+								</div>
+								<a href="generic.html" class="link"><span>Click Me</span></a>
+							</div>
+							<!-- Video Thumbnail -->
+							<div class="video col">
+								<div class="image fit">
+									<img src="images/pic06.jpg" alt="" />
+									<div class="arrow"></div>
+									<h1>Titre du projet</h1>
+									<p>Courte description pour donner envie de cliquer et
+										découvrir le projet plus en détail</p>
+								</div>
+								<a href="generic.html" class="link"><span>Click Me</span></a>
+							</div>
+							<!-- Video Thumbnail -->
+							<div class="video col">
+								<div class="image fit">
+									<img src="images/pic05.jpg" alt="" />
+									<div class="arrow"></div>
+									<h1>Titre du projet</h1>
+									<p>Courte description pour donner envie de cliquer et
+										découvrir le projet plus en détail</p>
+								</div>
+								<a href="generic.html" class="link"><span>Click Me</span></a>
+							</div>
+							<!-- Video Thumbnail -->
+							<div class="video col">
+								<div class="image fit">
+									<img src="images/pic04.jpg" alt="" />
+									<div class="arrow"></div>
+									<h1>Titre du projet</h1>
+									<p>Courte description pour donner envie de cliquer et
+										découvrir le projet plus en détail</p>
+								</div>
+								<a href="generic.html" class="link"><span>Click Me</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div style="text-align: center;">
+			</br>
+			<button onclick="location.href='/catalogue'" type="button"
+				class="button big alt scrolly">Voir tous les projets</button>
+		</div>
+		<!-- Three -->
+		<section class="wrapper ">
+			<div class="inner">
+				<header class="align-center">
+					<h2>Ces projets ont été financés grâce à Cinem'Art !</h2>
+				</header>
+				<!-- 3 Column Video Section -->
+				<div class="flex flex-3">
+					<div class="video col">
+						<div class="image fit">
+							<img src="medias/pic04.jpg" alt="" />
+							<div class="arrow">
+								<div class="icon fa-play"></div>
+							</div>
+						</div>
+						<p class="caption">217 contributeurs ont financé le premier
+							court-métrage de Romain Chevallier à hauteur de 15 000 euros</p>
+						<a href="generic.html" class="link"><span>Click Me</span></a>
+					</div>
+					<div class="video col">
+						<div class="image fit">
+							<img src="medias/pic05.jpg" alt="" />
+							<div class="arrow">
+								<div class="icon fa-play"></div>
+							</div>
+						</div>
+						<p class="caption">1247 contributeurs ont financé le premier
+							film de Xavier Lang à hauteur de 210 700 euros</p>
+						<a href="generic.html" class="link"><span>Click Me</span></a>
+					</div>
+					<div class="video col">
+						<div class="image fit">
+							<img src="medias/pic06.jpg" alt="" />
+							<div class="arrow">
+								<div class="icon fa-play"></div>
+							</div>
+						</div>
+						<p class="caption">712 contributeurs ont financé le premier
+							documentaire de Chloé Martin à hauteur de 40 000 euros</p>
+						<a href="generic.html" class="link"><span>Click Me</span></a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- Footer -->
+	<footer>
+		<div th:replace="footer :: myFooter"></div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,62 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### DAO ###
+/cinemart-DAO/target/
+/cinemart-DAO/.classpath
+/cinemart-DAO/.project
+/cinemart-DAO/.settings
+
+### MODEL ###
+/cinemart-Model/target/
+/cinemart-Model/.classpath
+/cinemart-Model/.project
+/cinemart-Model/.settings
+
+### Presentation ###
+/cinemart-Presentation/target/
+/cinemart-Presentation/.classpath
+/cinemart-Presentation/.project
+/cinemart-Presentation/.settings
+
+### Services ###
+/cinemart-Services/target/
+/cinemart-Services/.classpath
+/cinemart-Services/.project
+/cinemart-Services/.settings
+
+
+
+
+
