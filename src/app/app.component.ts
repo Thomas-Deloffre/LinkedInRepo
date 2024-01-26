@@ -9,12 +9,13 @@ import { Pokemon } from './pokemon';
 export class AppComponent implements OnInit{
   pokemonList: Pokemon[] = POKEMONS;
   pokemonSelected: Pokemon|undefined;
+  Title = 'app';
   
   ngOnInit(): void {
       console.table(this.pokemonList);     
   }
 
-  selectPokemon(pokemonId : string) {
+  /* selectPokemon(pokemonId : string) {
     const pokemon: Pokemon|undefined = this.pokemonList.find(pokemon => pokemon.id == +pokemonId);
 
     if(pokemon) {
@@ -25,6 +26,6 @@ export class AppComponent implements OnInit{
         console.log("Vous avez demandé un pokemon qui n'existe pas");
         this.pokemonSelected = pokemon;
       }
-    }
+    } */
   }
 
