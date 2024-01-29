@@ -13,7 +13,6 @@ export class BorderCardDirective {
   }
 
   @Input('pkmnBorderCard') borderColor: string;
-  @Input() pkmnBorderCard: string;
 
   @HostListener('mouseenter') onMouseenter() {
     this.setBorder(this.borderColor || '#009688');
