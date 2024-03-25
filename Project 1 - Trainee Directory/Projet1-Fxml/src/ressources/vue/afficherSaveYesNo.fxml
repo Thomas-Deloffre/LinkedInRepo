@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="309.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="9.0" layoutY="10.0" prefHeight="289.0" prefWidth="508.0" style="-fx-background-color: #b0e0e6; -fx-border-width: 0.2; -fx-border-color: black;" stylesheets="@MyTheme.css">
+         <children>
+            <TitledPane animated="false" prefHeight="37.0" prefWidth="508.0" text="Sauvegarder et Quitter">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TitledPane>
+            <Button fx:id="noBtn" layoutX="351.0" layoutY="216.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="85.0" text="Non" />
+            <Button fx:id="yesBtn" layoutX="63.0" layoutY="216.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="85.0" text="Oui">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button layoutX="93.0" layoutY="96.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="301.0" text="SAUVEGARDER AVANT DE QUITTER ?">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

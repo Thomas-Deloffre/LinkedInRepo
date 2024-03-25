@@ -1,0 +1,347 @@
+<!DOCTYPE HTML>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<title>Formulaire de soumission de Projet</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous">
+
+<link rel="stylesheet" href="assets/css/main.css" />
+
+<script src="/assets/js/ie/respond.min.js"></script>
+<script src="script.js"></script>
+<script async src="/assets/js/bundle.js?ver=146"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
+	type=""></script>
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
+	type=""></script>
+
+<title>CINEM'ART - plate-forme de collecte de fonds pour des
+	cinéastes</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+</head>
+<body>
+
+	<!-- Header -->
+	<header id="header">
+		<h1>
+			<a href="#">CINEM'ART<span> by Art'DevTeam</span></a>
+		</h1>
+		<a href="#menu">Menu </a>
+	</header>
+
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="index.html"
+				style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Qui
+					sommes nous ?</a></li>
+			<li><a href="generic.html"
+				style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Projets</a></li>
+			<li><a href="elements.html"
+				style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Nos
+					Partenaires</a></li>
+			<li><a href="elements.html"
+				style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Connectez
+					Vous</a></li>
+		</ul>
+	</nav>
+
+	<!-- Banner -->
+	<!--
+				To use a video as your background, set data-video to the name of your video without
+				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+				formats to work correctly.
+			-->
+	<section class="container">
+		<div class="big-padding">
+			<div>
+				<h2>Présentez nous votre projet !</h2>
+				<p>Ce formulaire complet vous permettra de nous décrire votre
+					projet. Il nous permettra de l'évaluer afin de le valider puis de
+					le publier sur notre plateforme et ainsi lui permettre de reçevoir
+					des dons !</p>
+			</div>
+			<!-- <a href="#main" class="button big alt scrolly">Passez au
+				formulaire</a> -->
+		</div>
+
+	</section>
+
+	<!-- Main -->
+	<div id="main">
+
+		<!-- One -->
+
+		<div class="container"></div>
+		<div id="exTab3" class="container">
+			<ul class="nav nav-pills">
+				<li class="active"><a href="#1b" data-toggle="tab"><h4>Le
+							gestionnaire de projet</h4></a></li>
+				<li><a href="#2b" data-toggle="tab"><h4>La nature du
+							projet</h4></a></li>
+				<li><a href="#3b" data-toggle="tab"><h4>Les médias</h4></a></li>
+				<li><a href="#4b" data-toggle="tab"><h4>Les documents
+							administratifs</h4></a></li>
+			</ul>
+
+			<form action=action= "#"  th:action="@{/soumissionProjet}"
+				th:object="${projetForm}" method="post">
+				<div class="tab-content clearfix">
+					<div class="tab-pane active" id="1b">
+						<h4>Voici les informations relatives à votre statut de
+							créateur</h4>
+						<div>
+							<!-- 
+							<label>Nom</label> <input type="text" name="name">
+							
+							<label>Prénom</label> <input type="text" name="forname">
+														
+							<label>Pseudo</label> <input type="text" name="pseudo">
+							
+							<label>Email</label> <input type="text" name="email"> -->
+
+
+							<br>
+
+							<div class="container">
+								<div class="row justify-content-center">
+									<input class="boutonInput" type="reset"
+										value="Réinitialiser les champs" />
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="tab-pane" id="2b">
+						<h4>Décrivez nous votre projet !</h4>
+
+
+						<label>Titre</label> <input type="text" name="titre"
+							th:field="*{titre}"> <br> <label>Description
+							du Projet</label> <input type="text" name="courtedescription"
+							th:field="*{courteDescription}"> <br>
+
+						<div class="form-group row">
+							<label for="numberInput" class="col-2 col-form-label">Montant
+								de Cagnotte Souhaitée</label>
+							<div class="col-10">
+								<input class="form-control" type="number" id="montantDemande"
+									name="montantDemande" th:field="*{montantDemande}">
+							</div>
+
+							<div>
+								<br> <label>Catégorie</label>
+								<div>
+									<select class="form-control">
+										<option value="0">Selectionnez une Catégorie</option>
+										<option th:each="categorie : ${categories}"
+											th:value="${categorie.getName()}"
+											th:utext="${categorie.getName()}"></option>
+									</select>
+								</div>
+								<br>
+							</div>
+							
+							<label>Genres</label>
+							<div>
+								<div>
+									<select class="form-control">
+										<option value="0">Sélectionnez un Genre principal</option>
+										<option th:each="genre : ${genres1}"
+											th:value="${genre.getName()}" th:utext="${genre.getName()}"></option>
+									</select>
+								</div>
+								<br>
+								<div>
+									<select class="form-control">
+										<option value="0">Sélectionnez un Genre secondaire</option>
+										<option th:each="genre : ${genres2}"
+											th:value="${genre.getName()}" th:utext="${genre.getName()}"></option>
+									</select>
+								</div>
+								<br>
+							</div>
+
+
+
+							<div class="form-group">
+								<label for="FormControlTextarea">Présentation du Projet</label>
+								<textarea class="Textarea" id="FormControlTextarea" rows="15"
+									name=longueDescription th:field="*{longueDescription}"></textarea>
+							</div>
+
+
+
+							<br>
+
+
+							<div>
+								<br> <label for="basic-url" class="form-label">Weblink</label>
+								<div class="input-group mb-3">
+									<span class="input-group-text" id="basic-addon3">https://</span>
+									<input type="text" class="form-control" id="basic-url"
+										aria-describedby="basic-addon3" name=webLink
+										th:field="*{webLink}">
+
+								</div>
+							</div>
+							<div>
+								<br> <br>
+								<div class="container">
+									<div class="row justify-content-center">
+										<input class="boutonInput" type="reset"
+											value="Réinitialiser les champs" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="tab-pane" id="3b">
+						<h4>Ajoutez des médias pour rendre votre projet plus
+							attrayant !</h4>
+						<div>
+
+							<!-- <div>
+								<label for="InputMedia1">Média n°1</label> <input type="file"
+									class="form-control-file" id="InputMedia1">
+								<div th:text="${projet.document}"></div>
+								<br> <label for="InputMedia2">Média n°2</label> <input
+									type="file" class="form-control-file" id="InputMedia2">
+								<div th:text="${projet.document}"></div>
+								<br> <label for="InputMedia3">Média n°3</label> <input
+									type="file" class="form-control-file" id="InputMedia3">
+								<div th:text="${projet.document}"></div>
+								<br> <label for="InputMedia4">Média n°4</label> <input
+									type="file" class="form-control-file" id="InputMedia4">
+								<div th:text="${projet.document}"></div>
+								<br> <label for="InputMedia5">Média n°5</label> <input
+									type="file" class="form-control-file" id="InputMedia5">
+								<div th:text="${projet.document}"></div>
+								<br>
+								<div class="container-fluid">
+									<div class="row justify-content-center">
+										<input class="boutonInput" type="reset"
+											value="Réinitialiser les champs" />
+									</div>
+								</div>
+							</div> -->
+
+						</div>
+					</div>
+
+
+
+					<div class="tab-pane" id="4b">
+						<h4>Vous y êtes presque ! Fournissez nous les documents
+							nécessaires à la publication de votre projet</h4>
+						<div>
+
+							<!-- <div>
+								<label for="InputFile1">Carte d'identité</label> <input type="file"
+									class="form-control-file" id="InputFile1">
+								<div th:text="${projet.document}"></div>
+								<br> <label for="InputFile1">Relevé d'identité Bancaire</label> <input
+									type="file" class="form-control-file" id="InputFile2">
+								<div th:text="${projet.document}"></div>
+								<br> <label for="InputFile1">Justificatif de domicile</label> <input
+									type="file" class="form-control-file" id="InputFile3">
+								<div th:text="${projet.document}"></div>
+								<br> <label for="InputFile1">Document 4</label> <input
+									type="file" class="form-control-file" id="InputFile4">
+								<div th:text="${projet.document}"></div>
+								
+								<br>
+								<div class="container-fluid">
+									<br> <input class="boutonInput" type="reset"
+										value="Réinitialiser les champs" />
+								</div>
+
+								<br>
+							</div> -->
+
+							<div class="container-fluid">
+								<div class="row justify-content-center">
+									<input class="boutonInput" type="submit"
+										value="Soumettre le projet" />
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<div class="flex flex-3">
+				<div class="col">
+					<h3>Vestibullum</h3>
+					<ul class="alt">
+						<li><a href="#">Nascetur nunc varius commodo.</a></li>
+						<li><a href="#">Vis id faucibus montes tempor</a></li>
+						<li><a href="#">Massa amet lobortis vel.</a></li>
+						<li><a href="#">Nascetur nunc varius commodo.</a></li>
+					</ul>
+				</div>
+				<div class="col">
+					<h3>Lobortis</h3>
+					<ul class="alt">
+						<li><a href="#">Nascetur nunc varius commodo.</a></li>
+						<li><a href="#">Vis id faucibus montes tempor</a></li>
+						<li><a href="#">Massa amet lobortis vel.</a></li>
+						<li><a href="#">Nascetur nunc varius commodo.</a></li>
+					</ul>
+				</div>
+				<div class="col">
+					<h3>Accumsan</h3>
+					<ul class="alt">
+						<li><a href="#">Nascetur nunc varius commodo.</a></li>
+						<li><a href="#">Vis id faucibus montes tempor</a></li>
+						<li><a href="#">Massa amet lobortis vel.</a></li>
+						<li><a href="#">Nascetur nunc varius commodo.</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span
+						class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span
+						class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-snapchat"><span
+						class="label">Snapchat</span></a></li>
+			</ul>
+			&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>.
+			Images: <a href="https://unsplash.com">Coverr</a>. Video: <a
+				href="https://coverr.co">Coverr</a>.
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+</html>

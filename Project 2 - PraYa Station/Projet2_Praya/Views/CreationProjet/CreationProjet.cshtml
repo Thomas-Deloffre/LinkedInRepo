@@ -1,0 +1,109 @@
+﻿@model Projet2_Praya.Models.projet
+@{
+    ViewBag.Title = "Création de Projet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <section class="bodytitreavant">
+                <div>
+                    <h1 class="titrecatalogue">Formulaire de création de projet</h1>
+                </div>
+            </section>
+
+            <section>
+                <div>
+                    <h2 class="titrecatalogue"> Présentation du Projet </h2>
+                </div>
+            </section>
+
+            <div>
+                <div>
+                    <label for="ProjName">Nom du Projet</label>
+                </div>
+                @Html.TextBoxFor(m => m.libelle)
+                @Html.ValidationMessageFor(m => m.libelle)
+            </div>
+
+            <div>
+                <br />
+            </div>
+
+            <div>
+                @{
+                    ViewBag.Title = "Selectionnez votre type";
+
+                }
+
+                <fieldset>
+                    Type de Projet
+
+                    @*@Html.TextBoxFor(m => m.type_du_projet)*@
+                    @Html.DropDownListFor(m => m.type_du_projet, new SelectList(ViewBag.TypesProjet, "Value", "Text"), "Selectionnez Le Type de Projet")
+                    @Html.ValidationMessageFor(m => m.type_du_projet)
+
+
+                    <br />
+                </fieldset>
+
+                <div>
+                    <br />
+                </div>
+            </div>
+
+
+
+            <div class="xxxxxxxx">
+                <label for="MontantAinput">Cagnotte Souhaitée</label>
+                <div class="mw-input">
+                    @Html.TextBoxFor(m => m.montant_attendu)
+                </div>
+            </div>
+
+            <div>
+                <br />
+            </div>
+
+            <div class="xxxxxxx">
+                <label for="DateBinput">Date Butoir</label>
+                <div class="mw-input">
+                    @Html.EditorFor(m => m.date_butoir)
+                </div>
+            </div>
+
+            <div>
+                <br />
+            </div>
+
+            <div>
+                <label for="DateDinput">Date Debut de Projet</label>
+                <div>
+                    @Html.EditorFor(m => m.date_debut)
+                </div>
+            </div>
+
+            <div>
+                <br />
+            </div>
+
+            <div>
+                <label for="DescriptionInput">Description complète du Projet</label>
+                <div>
+                    @Html.TextBoxFor(m => m.description)
+                </div>
+            </div>
+
+            <div>
+                <br />
+            </div>
+
+            <input type="submit" value="Soumettre le projet" />
+
+        }
+    </div>
+
+</body>
+

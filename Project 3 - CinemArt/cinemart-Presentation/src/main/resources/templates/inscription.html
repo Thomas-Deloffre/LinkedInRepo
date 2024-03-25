@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" th:href="@{css/MainStyleCinemArt.css}">
+<meta charset="utf-8">
+<title>Cinemart, la plateforme de financement participatif des
+	projets audiovisuels!</title>
+</head>
+<body>
+	<header>
+		<div th:replace="header :: myHeader"></div>
+	</header>
+	<form id="inscriptionForm" class="marginTop" action="#"
+		th:action="@{/ajouterUtilisateur}" th:object="${utilisateur}"
+		method="post">
+		<div class="formConnectionBox">
+			<div class="formHead topRound">Nouvelle inscription</div>
+			<br>
+			<div class="divWithLabelInput">
+				<input id="pseudo" class="inputWithLabel" type="text" name="pseudo"
+					placeholder="*Pseudo">
+				<div class="msgInfoForm" id="pseudoInformation"></div>
+			</div>
+			<div class="divWithLabelInput">
+				<input id="mdp" class="inputWithLabel" type="password" name="mdp"
+					placeholder="*Mot de passe">
+				<div id="mdpInformation" class="msgInfoForm"></div>
+			</div>
+			<div class="divWithLabelInput">
+				<input id="mdpConfirmation" class="inputWithLabel" type="password"
+					name="mdpConfirme" placeholder="*Confirmation du mot de passe">
+				<div id="mdpConfirmationInformation" class="msgInfoForm"></div>
+			</div>
+			<div class="divWithLabelInput">
+				<input class="inputWithLabel" type="text" name="nom"
+					placeholder="Nom">
+					<div  class="msgInfoForm"></div>
+			</div>
+			<div class="divWithLabelInput">
+				<input class="inputWithLabel" type="text" name="prenom"
+					placeholder="Prenom">
+					<div  class="msgInfoForm"></div>
+			</div>
+			<div class="divWithLabelInput">
+				<input id="email" class="inputWithLabel" type="text" name="email"
+					placeholder="*Email">
+				<div id="emailInformation" class="msgInfoForm"></div>
+			</div>
+			<div class="divWithLabelInput">
+				<input id="emailConfirmation" class="inputWithLabel" type="text"
+					name="emailConfirme" placeholder="*Confirmation de l'email">
+				<div id="emailConfirmationInformation" class="msgInfoForm"></div>
+			</div>
+			<br>
+			<div class="divSubmit">
+				<input class="button big alt" type="submit" value="Valider">
+			</div>
+		</div>
+	</form>
+	<script>
+	let inscriptionForm = $("#inscriptionForm");
+	let pseudo = $("#pseudo");
+	let pseudoInformation = $("#pseudoInformation");
+	let mdp = $("#mdp");
+	let mdpInformation = $("#mdpInformation");
+	let mdpConfirmation = $("#mdpConfirmation");
+	let mdpConfirmationInformation = $("#mdpConfirmationInformation");
+	let email = $("#email");
+	let emailInformation = $("#emailInformation");
+	let emailConfirmation = $("#emailConfirmation");
+	let emailConfirmationInformation = $("#emailConfirmationInformation");
+	inscriptionForm.submit(function(){
+		let estCorrectementRemplie = true;
+		if(pseudo.val() == ""){
+			pseudoInformation.text("Pseudo obligatoire!");
+			estCorrectementRemplie = false;
+		}
+		else{
+			pseudoInformation.text("");
+		}
+		if(mdp.val() == ""){
+			mdpInformation.text("Mot de passe obligatoire!");
+			estCorrectementRemplie = false;
+		}
+		else{
+			mdpInformation.text("");
+		}
+		if(mdpConfirmation.val() == ""){
+			mdpConfirmationInformation.text("Confirmation mdp obligatoire!");
+			estCorrectementRemplie = false;
+		}
+		else{
+			mdpConfirmationInformation.text("");
+		}
+		if(mdp.val() != mdpConfirmation.val())	{
+			mdpInformation.text("Le mot de passe et sa confirmation");
+			mdpConfirmationInformation.text("ne sont pas identique!!");
+			estCorrectementRemplie = false;
+		}
+		if(email.val() != emailConfirmation.val()){
+			emailInformation.text("L'email et sa confirmation");
+			emailConfirmationInformation.text("ne sont pas identique!!");
+			estCorrectementRemplie = false;
+		}
+		else{
+			var modele = /^[a-z0-9\-_\.]+@[a-z0-9]+\.[a-z]{2,5}$/i;
+			if(modele.test(email.val())){
+			}
+			else{
+				emailInformation.text("Format de l'email doit etre valide!");
+				emailConfirmationInformation.text("");
+				estCorrectementRemplie = false;
+			}
+		}
+		if(email.val() == ""){
+			emailInformation.text("Email obligatoire!");
+			estCorrectementRemplie = false;
+		}
+		if(emailConfirmation.val() == ""){
+			emailConfirmationInformation.text("Confirmation email obligatoire!");
+			estCorrectementRemplie = false;
+		}
+		return estCorrectementRemplie;
+		});
+	</script>
+	<footer>
+		<div th:replace="footer :: myFooter"></div>
+	</footer>
+</body>
+</html>

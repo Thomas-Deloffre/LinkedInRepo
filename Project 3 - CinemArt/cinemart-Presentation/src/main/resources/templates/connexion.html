@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org"
+ 	xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" th:href="@{css/MainStyleCinemArt.css}">
+<title>Cinemart, la plateforme de financement participatif des
+	projets audiovisuels!</title>
+</head>
+<body>
+	<!--  <div th:replace="head :: myHead"></div>-->
+	<header>
+		<div th:replace="header :: myHeader"></div>
+	</header>
+	<div class="corpsInformations"></div>
+	<form action="#"  th:action="@{/connectionUtilisateur}" th:object="${utilisateur}" method="post">
+		<div class="formConnectionBox">
+			<div class="formHead topRound">Connectez-vous</div>
+			<div class="divWithLabelInput">
+				<input class="inputWithLabel" type="text" name="pseudo"
+					placeholder="Pseudo">
+			</div>
+			<div class="divWithLabelInput">
+				<input class="inputWithLabel" type="password" name="mdp"
+					placeholder="Mot de passe">
+			</div>
+			<div class="divSubmit"><input class="submit" type="submit" value="Valider">
+			</div>
+		</div>
+	</form>
+	<footer>
+		<div th:replace="footer :: myFooter"></div>
+	</footer>
+</body>
+</html>

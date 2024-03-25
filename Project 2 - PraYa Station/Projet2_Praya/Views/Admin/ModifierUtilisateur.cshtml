@@ -1,0 +1,41 @@
+﻿@model Projet2_Praya.Models.utilisateur
+@{
+    ViewBag.Title = "Modifier un utilisateur";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <fieldset>
+                <legend>Modifier un Utilisateur </legend>
+                <div>
+                    <label>email : </label>
+                    @Html.DisplayTextFor(model => model.utilisateur_email)
+                </div>
+                <div style="display:none">
+                    @Html.TextBoxFor(model => model.utilisateur_email)
+                </div>
+                <div>
+                    <label>Mot de passe : </label>
+                    <!--@Html.LabelFor(model => model.mot_de_passe) -->
+                    @Html.PasswordFor(model => model.mot_de_passe)
+                </div>
+                <div>
+                    <label>Prénom : </label>
+                    <!--@Html.LabelFor(model => model.prenom) -->
+                    @Html.TextBoxFor(model => model.prenom)
+                </div>
+                <div>
+                    <label>Nom de Famille : </label>
+                    <!-- @Html.LabelFor(model => model.nom) -->
+                    @Html.TextBoxFor(model => model.nom)
+                </div>
+                <br />
+                <input type="submit" value="Modifier" />
+            </fieldset>
+        }
+    </div>
+</body>
+

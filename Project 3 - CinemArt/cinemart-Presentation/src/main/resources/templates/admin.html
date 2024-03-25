@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org"
+ 	xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" th:href="@{css/MainStyleCinemArt.css}">
+<title>Cinemart, la plateforme de financement participatif des
+	projets audiovisuels!</title>
+</head>
+<body>
+	<!--  <div th:replace="head :: myHead"></div>-->
+	<header>
+		<div th:replace="headerAdministration :: myHeaderAdmin"></div>
+	</header>
+	<h1 class="corpsInformations adminTitle">Projet en attente de validation : </h1>
+	<div id="corpsProjets" class="corpsOnglets">
+		<table class="tableProjets">
+			<tr>
+				<th>Utilisateur</th>
+				<th>Titre</th>
+				<th>Statut</th>
+				<th>Categorie</th>
+				<th>Courte description</th>
+				<th>Montant demande</th>
+				<th></th>
+			</tr>
+			<tr th:each="projet: ${listeProjetsPending}">
+				<td th:text="${projet.utilisateur.pseudo}" />
+				<td th:text="${projet.titre}" />
+				<td th:text="${projet.projetStatut}" />
+				<td th:text="${#strings.toString(projet.categorie)}" />
+				<td th:text="${projet.courteDescription}" />
+				<td th:text="${projet.montantDemande} + ' euro(s)'" />
+				<td><a th:href="@{'http://localhost:8080/etudierProjet?idProjet=' + ${projet.idProjet}}" th:text="'Etudier'"/>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<h1 class="corpsInformations adminTitle">Projet en attente de paiement : </h1>
+	<div id="corpsProjets" class="corpsOnglets">
+		<table class="tableProjets">
+			<tr>
+				<th>Utilisateur</th>
+				<th>Titre</th>
+				<th>Statut</th>
+				<th>Categorie</th>
+				<th>Courte description</th>
+				<th>Montant demande</th>
+				<th></th>
+			</tr>
+			<tr th:each="projet: ${listeProjetsPaiement}">
+				<td th:text="${projet.utilisateur.pseudo}" />
+				<td th:text="${projet.titre}" />
+				<td th:text="${projet.projetStatut}" />
+				<td th:text="${#strings.toString(projet.categorie)}" />
+				<td th:text="${projet.courteDescription}" />
+				<td th:text="${projet.montantDemande} + ' euro(s)'" />
+				<td>
+					<form th:action="@{'/paiementProjet?idProjet=' + ${projet.idProjet}}" method="post">
+						<input type="submit" value="Cloturer"/>
+					</form>
+				</td>
+			</tr>
+		</table>
+		</form>
+	</div>
+	<footer>
+		<div th:replace="footer :: myFooter"></div>
+	</footer>
+</body>
+</html>

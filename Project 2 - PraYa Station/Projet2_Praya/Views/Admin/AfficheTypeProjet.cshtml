@@ -1,0 +1,32 @@
+﻿@model List<Projet2_Praya.Models.type_projet>
+@{
+    ViewBag.Title = "Liste des types de projet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div>
+        <h2>Liste des Types de projet de la solution PraYa : </h2>
+        <a href="/Admin/AjouterTypeProjet/">Ajouter un type de projet</a>
+        <br /><br />
+
+        <table border="1">
+            <tr>
+                <th>Type</th>
+                <th>Libellé</th>
+                <th>lien modif</th>
+            </tr>
+            @{
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.type</td>
+                        <td>@item.libelle</td>
+                        <td><a href="/Admin/ModifierTypeProjet?id=@item.type">Modifier</a></td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</body>
+

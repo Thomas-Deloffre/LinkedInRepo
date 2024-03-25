@@ -1,0 +1,36 @@
+﻿@model List<Projet2_Praya.Models.utilisateur>
+@{
+    ViewBag.Title = "Liste des utilisateurs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div>
+        <h2>Liste des utilisateurs de la solution PraYa : </h2>
+        <a href="/Admin/AjouterUtilisateur/">Ajouter Utilisateur</a>
+        <br /><br />
+
+        <table border="1">
+            <tr>
+                <th>Email</th>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Date Maj</th>
+                <th>lien modif</th>
+            </tr>
+            @{
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.utilisateur_email</td>
+                        <td>@item.prenom</td>
+                        <td>@item.nom</td>
+                        <td>@item.date_maj.ToString("dd/MM/yyyy")</td>
+                        <td><a href="/Admin/ModifierUtilisateur?id=@item.utilisateur_email">Modifier</a></td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</body>
+

@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>fr.isika.cdi07</groupId>
+		<artifactId>CinemArt</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>cinemart-Presentation</artifactId>
+	<name>cinemart-Presentation</name>
+	<description>Presentation en HTML et CSS </description>
+	<packaging>war</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>fr.isika.cdi07</groupId>
+			<artifactId>cinemart-Services</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>

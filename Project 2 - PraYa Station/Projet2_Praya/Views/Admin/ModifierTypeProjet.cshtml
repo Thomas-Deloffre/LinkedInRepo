@@ -1,0 +1,31 @@
+﻿@model Projet2_Praya.Models.type_projet
+@{
+    ViewBag.Title = "Modification type du projet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <fieldset>
+                <legend>Modifier un type de projet </legend>
+                <div>
+                    <label>Type : </label>
+                    @Html.DisplayTextFor(model => model.type)
+                </div>
+                <div style="display:none">
+                    @Html.TextBoxFor(model => model.type)
+                </div>
+                <div>
+                    <label>Libellé : </label>
+                    <!--@Html.LabelFor(model => model.libelle) -->
+                    @Html.TextBoxFor(model => model.libelle)
+                </div>
+                <br />
+                <input type="submit" value="Modifier" />
+            </fieldset>
+        }
+    </div>
+</body>
+

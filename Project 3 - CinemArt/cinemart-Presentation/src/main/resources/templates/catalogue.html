@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" th:href="@{css/MainStyleCinemArt.css}">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cinem'Art - Projets</title>
+</head>
+<body>
+	<header>
+		<div th:replace="header :: myHeader"></div>
+	</header>
+	
+	<div class="container">
+		<div class="row" style="margin-top:100px;">
+			<h3> Tous les projets en cours de campagne de collecte</h3>
+		</div>
+<!-- 		<div class="row">
+			<h4> Rechercher des projets</h4>
+		</div> -->
+		<div class="row">
+		<h4> Rechercher des projets</h4>
+			<form action="/triCatalogue" method="post">
+				<div class="field-Form">
+				<label>Choisissez une catégorie</label>
+					<select name="categorie" class="selectpicker" title="Choisissez une catégorie">
+						<option	th:each="catOpt : ${T(fr.isika.cdi07.model.projet.ProjetCategorie).values()}" th:value="${catOpt}" th:text="${catOpt.displayValue}"></option>
+					</select>
+				</div>
+				<div class="field-Form">
+				<label>Choisissez un genre</label>
+					<select name="genreMain" class="selectpicker" title="Choisissez un genre principal">
+						<option th:each="genreMOpt : ${T(fr.isika.cdi07.model.projet.ProjetGenres).values()}" th:value="${genreMOpt}" th:text="${genreMOpt.displayVal}"></option>
+					</select>
+				</div>
+				<div class="field-Form">
+				<label>Mot-clé à rechercher : </label>
+				<input type="text" name="motCle">	
+				</div>
+				<button type="submit">Rechercher</button>
+			</form>
+<!-- 			<form action="/triCatalogue2" method="post">
+				<div class="field-Form">
+				<label>Mot-clé à rechercher : </label>
+				<input type="text" name="motCle">	
+				</div>
+				
+				<button type="submit">Rechercher dans les projets</button>
+			</form> -->
+		</div>
+		<div class="row">
+		<div class="flex flex-3">
+			<div class="video col" th:each="projet : ${listProjet}">
+				<div class="image fit">
+					<img th:src="@{'projet/image/' + ${projet.idProjet}}" alt="imageProjet"/>
+					<div class="arrow">
+					</div>
+					<h1 th:text="${projet.titre}"></h1>
+					<p th:text="${projet.courteDescription}"></p>
+				</div>
+				<a th:href="@{'http://localhost:8080/page_projet?idProjet=' + ${projet.idProjet}}" th:text="'Fiche Projet'"/>
+			</div>
+		</div>
+		</div>
+	</div>
+	
+	
+		<!-- Footer -->
+	<footer>
+		<div th:replace="footer :: myFooter"></div>
+	</footer>
+	<!-- Scripts -->
+	<script type="text/javascript">
+		let likebtn = document.querySelector('#likebtn');
+		let dislikebtn = document.querySelector('#dislikebtn');
+		let input1 = document.querySelector('#input1');
+		let input2 = document.querySelector('#input2');
+		likebtn.addEventListener('click',()=>{input1.value=parseInt(input1.value)+1;})
+		input1.style.color="#12FF00";
+		dislikebtn.addEventListener('click',()=>{input2.value=parseInt(input2.value)+1;})
+		input2.style.color="#FF0000";
+	</script>
+</body>
+</html>

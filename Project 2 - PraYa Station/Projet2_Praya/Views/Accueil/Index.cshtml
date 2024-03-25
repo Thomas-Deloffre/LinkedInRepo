@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Accueil de la plateforme Praya";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div>
+        <h2>Bienvenue sur l'accueil</h2>
+        <p>L'heure du serveur est @ViewBag.curdate.ToString("le dddd dd/MM/yyyy à H:mm:ss")</p>
+
+        @if (ViewBag.utilisateur != null)
+        {
+            <h3>
+                <br />
+                bienvenue à vous utilisateur @ViewBag.utilisateur.utilisateur_email
+                , @ViewBag.utilisateur.prenom @ViewBag.utilisateur.nom
+            </h3>
+            <p><a href="/Login/ModifierUtilisateur">Modifiez votre profil</a></p>
+            <p><a href="/Login/Deconnexion">Deconnectez vous</a></p>
+        }
+        else
+        {
+            <br />
+            <a href="/Login/Index">Connectez vous</a>
+        }
+    </div>
+</body>

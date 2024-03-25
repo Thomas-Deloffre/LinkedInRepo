@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" th:href="@{css/MainStyleCinemArt.css}">
+<link rel="stylesheet" th:href="@{css/MainStyleCinemArt.css}">
+<link href="/docs/5.0/assets/css/docs.css" rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/main.css" />
+
+
+
+<title>Cinemart, la plateforme de financement participatif des
+	projets audiovisuels!</title>
+
+<script src="/assets/js/ie/respond.min.js"></script>
+<script src="script.js"></script>
+<script async src="/assets/js/bundle.js?ver=146"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
+	type=""></script>
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
+	type=""></script>
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+</head>
+
+<!-- Header -->
+<header>
+	<div th:replace="header :: myHeader"></div>
+</header>
+
+<body>
+
+
+	<div class="container">
+		<br /> <br /> <br /> <br></br>
+
+
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container">
+				<h1 class="display-4">CONDITIONS GÉNÉRALES D’UTILISATION</h1>
+				<p class="lead">Les utilisateurs sont invités à lire
+					attentivement et à comprendre les présentes conditions générales
+					d’utilisation. Ils s’engagent à respecter la totalité des
+					dispositions qu’elles contiennent.</p>
+			</div>
+		</div>
+
+		<h1 class="hero-title">CONDITIONS GÉNÉRALES D’UTILISATION
+			UTILISATEUR</h1>
+
+		<div class="accordion accordion-flush" id="accordionFlushExample">
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingOne">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+						aria-expanded="false" aria-controls="flush-collapseOne">
+						1 - Présentation du service</button>
+				</h2>
+				<div id="flush-collapseOne" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingOne"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">Bienvenue sur le site CinemArt !
+
+						CinemArt a mis au point et développe un panel d’outils simplifiant
+						la collecte, la gestion et le traitement de tous les paiements
+						susceptibles d’être réalisés au profit d’une entreprise, d’une
+						fondation, d’un fonds de dotation et d’une manière générale, au
+						profit de tous les acteurs de l’économie sociale et solidaire.
+						CinemArt facilite ainsi les paiements réalisés au profit des
+						Organismes référencés sur le site, grâce à la création d’un compte
+						de paiement associé. Les outils de collecte proposés par CinemArt
+						permettent de prendre en charge plusieurs moyens de paiement
+						(carte, chèque, prélèvement SEPA, sans que cette liste ne soit
+						exhaustive) grâce à un dispositif simplifié et sans coût pour les
+						Organismes et les Contributeurs. Fournissant un service gratuit,
+						CinemArt ne perçoit aucune rémunération de la part des Organismes
+						bénéficiaires. CinemArt se rémunère seulement sur la base de
+						pourboires payés par les Contributeurs et dont le montant est
+						librement fixé par eux. Conformément à l’article L.111-7 du Code
+						de la consommation, CinemArt vous informe que le classement ou le
+						référencement des contenus, des biens ou des services proposés ou
+						mis en ligne n’est en aucun cas lié à l'existence d'une relation
+						contractuelle, d'un lien capitalistique ou d'une rémunération à
+						son profit. CinemArt ne perçoit aucune rémunération de la part des
+						Organismes présentés sur son site, son financement reposant
+						uniquement sur les Pourboires pouvant être accordés par les
+						Utilisateurs, conformément à l’3 des présentes conditions. Afin
+						d'utiliser les Services, il vous faut un accès à l'Internet soit
+						directement sur votre ordinateur, soit par l'intermédiaire
+						d'autres supports tels que le téléphone mobile, les assistants
+						personnels. Les éventuels frais correspondants à ces accès sont à
+						votre seule charge. De plus, vous devez vous munir de tout
+						matériel nécessaire afin d'assurer cette connexion au réseau
+						Internet. Il vous appartient de vous assurer que votre matériel et
+						vos logiciels ne perturberont pas ni n'interféreront avec les
+						Services CinemArt. Vous devez déconnecter immédiatement tout
+						appareil ou logiciel qui causerait des interférences avec les
+						Services. Il est souhaitable que vous conserviez les Contenus
+						échangés ou stockés sur les Services sur une copie de sauvegarde
+						afin de vous prémunir de tous risques de perte.</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingTwo">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+						aria-expanded="false" aria-controls="flush-collapseTwo">
+						2 - Définitions</button>
+				</h2>
+				<div id="flush-collapseTwo" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingTwo"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">Les termes ci-après définis et
+						dont la première lettre figure en lettres majuscules dans le
+						présent Accord ont la signification qui leur est attribuée au
+						présent article. Accord : désigne le présent document, ses Annexes
+						ainsi que ses éventuels avenants ultérieurs. Annexe : désigne
+						toute annexe au présent Accord. Compte de paiement : compte ouvert
+						dans les livres de Lemon Way Contenus : désigne les textes,
+						photos, vidéos et toute autre forme de contenu mis en ligne par
+						CinemArt ou par l’Organisme sur le Service. Contributeur : désigne
+						la personne qui s’est inscrite sur le site CinemArt et qui réalise
+						un paiement au profit d’un Organisme, quel que soit le mode
+						utilisé (chèque ; carte ; prélèvement SEPA). Logo : désigne le
+						logo destiné à l’identification de CinemArt ou d’un Organisme
+						auprès du public. Marque : désigne la marque française ou
+						internationale déposée et destinée à l’identification de
+						l’activité de l’Organisme. Membres : désigne les membres de
+						l’Organisme. Organisme : désigne une entreprise, une fondation, un
+						fonds de dotation, une organisation à but non lucratif ainsi que
+						tous les acteurs de l’économie sociale et solidaire utilisant les
+						outils de collecte de fonds en ligne proposés par CinemArt.
+
+						Partenaires : désigne, pour CinemArt ou un Organisme
+						respectivement, les personnes ou entités tierces avec lesquelles
+						des relations sont entretenues dans le cadre de ses activités.
+
+						Pourboire : désigne, lorsqu’un Internaute finance un Organisme via
+						un paiement en ligne sur le Service, le montant que l’internaute
+						décide, le cas échéant, de verser à CinemArt en plus, et qui n’est
+						donc pas reversé à l’Organisme. Reçu Fiscal : désigne une
+						attestation de versement ouvrant droit à un avantage fiscal au
+						titre des articles 200, 238 bis et 885-0 V bis du Code Général des
+						Impôts. Propriété intellectuelle CinemArt : désigne tout élément
+						susceptible de protection par le droit de la propriété
+						intellectuelle ou industrielle, tel que notamment, le logo, la
+						marque et les contenus originaux de CinemArt. Service : désigne le
+						service en ligne de CinemArt disponible à l’adresse
+						http://www.CinemArt.com, c’est-à-dire la possibilité donnée à un
+						Utilisateur de soutenir un Organisme. Utilisateur : désigne un
+						internaute navigant sur le site, sans s’être inscrit sur le site
+						et dont l’identité est inconnue.</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingThree">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+						aria-expanded="false" aria-controls="flush-collapseThree">
+						3 - Acceptation</button>
+				</h2>
+				<div id="flush-collapseThree" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingThree"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">Toute utilisation ou
+						visualisation des Services fournis par CinemArt ou sur le site
+						CinemArt.com, suppose que vous vous engagiez à respecter les
+						présentes conditions d'utilisation (ci-après « Conditions
+						d'Utilisation »). En outre, les opérations de paiement réalisées
+						sur notre site, impliquent, conformément aux dispositions du Code
+						monétaire et financier, l’utilisation d’un système de paiement
+						géré par un établissement agréé. Par conséquent, l’utilisation
+						d’un moyen de paiement suppose l’acceptation des conditions du
+						système de paiement proposé sur le site CinemArt. A cette fin,
+						CinemArt a établi différents partenariats avec des établissements
+						agréés qui permettent aux Contributeurs d’effectuer leurs
+						paiements en toute sécurité et sélectionne pour chaque projet le
+						système le plus adapté. Lorsque le système de paiement proposé sur
+						le site est celui géré par la société Lemon Way, chaque
+						Contributeur accepte qu’un compte de paiement soit ouvert à son
+						nom et accepte les conditions générales d’utilisation proposées
+						par cette société. Lorsque le système de paiement proposé sur le
+						site est celui géré par la société Stripe, Ltd., le Contributeur
+						accepte de communiquer les données permettant son identification.</div>
+				</div>
+			</div>
+		</div>
+
+		<br />
+
+
+		<div class="accordion accordion-flush" id="accordionFlushExample">
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingFour">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
+						aria-expanded="false" aria-controls="flush-collapseFour">
+						4 - Fonctionnement</button>
+				</h2>
+				<div id="flush-collapseFour" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingFour"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">CinemArt met à disposition de ses
+						Utilisateurs un service en ligne leur permettant de réaliser tout
+						type de paiement au profit des Organismes référencés sur le site.
+						CinemArt propose aux Utilisateurs du Service lors de leur paiement
+						en ligne, de verser un Pourboire à CinemArt. Le Pourboire est
+						mentionné dans l’attestation de paiement émise par CinemArt, mais
+						il n’est pas reversé à l’Organisme. Le Pourboire n’est pas soumis
+						à la TVA car CinemArt ne fournit aucune contrepartie au
+						Contributeur.</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingFive">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
+						aria-expanded="false" aria-controls="flush-collapseFive">
+						5 - Utilisation</button>
+				</h2>
+				<div id="flush-collapseFive" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingFive"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">Dès qu’un Utilisateur devient
+						Contributeur, un compte CinemArt est créé. Le cas échéant, un
+						compte de paiement associé est également créé, en cas
+						d’utilisation du système de paiement LemonWay. La création d'un
+						compte CinemArt implique la fourniture d'informations permettant
+						l'identification du Contributeur, renseignées dans un formulaire
+						d'inscription au Service. Ces informations sont ensuite stockées
+						et accessibles dans la rubrique « Mon Profil », qui apparaît, dès
+						que vous avez ouvert une session avec votre adresse mail. Vous
+						avez une obligation légale d'identification dès que vous utilisez
+						des services vous permettant de mettre du contenu à disposition du
+						public, par exemple de mettre en ligne votre page personnelle ou
+						de poster un commentaire. Dans cette hypothèse, en qualité de
+						personne physique agissant à titre non professionnel, vous vous
+						engagez à : Lors de sa première action sur CinemArt, le
+						contributeur doit renseigner les éléments suivants : fournir des
+						informations vraies, exactes, et complètes, et vérifiables les
+						maintenir et les remettre à jour régulièrement. La fourniture de
+						ces informations et leur maintien à jour de façon à permettre
+						votre identification sont des conditions déterminantes de votre
+						droit d'utiliser le Service. Pour créer un Compte CinemArt, vous
+						entrez votre adresse mail et choisissez un mot de passe. Ce Compte
+						CinemArt vous est strictement personnel et vous vous interdisez de
+						le partager ou le céder à qui que ce soit. Cela constitue une
+						obligation essentielle de ce contrat. Vous êtes responsable (i) de
+						la conservation du caractère confidentiel de votre mot de passe et
+						(ii) des actions qui sont effectuées sous votre Nom de Compte
+						et/ou avec votre mot de passe : si vous ouvrez une session sur un
+						ordinateur public, veillez à fermer votre session lorsque vous
+						quittez cet ordinateur. Ne communiquez votre mot de passe à
+						personne. Votre Nom et Prénom pourront être reproduits sur des
+						sites de CinemArt au titre des Services disponibles que vous
+						utilisez sur lesdits sites, ainsi que dans les cas de distribution
+						des services sur des sites partenaires. Lorsque les Contributeurs
+						du site CinemArt font un paiement à l’Organisme, ils doivent
+						indiquer leur Nom, Prénom, et Adresse Mail ainsi que définir le
+						montant du versement fait à l’Organisme. CinemArt s’engage à
+						reverser 100% du paiement réalisé au profit del’Organisme. Une
+						fois que le Contributeur a finalisé son paiement sur le Service,
+						CinemArt lui envoie automatiquement par courrier électronique une
+						attestation de paiement, que celui-ci peut à tout moment retrouver
+						dans son espace personnel sur le site www.CinemArt.com. Si
+						l’Organisme a déclaré qu’il était habilité à émettre des Reçus
+						fiscaux au titre des articles 200, 238 bis et 978 du code général
+						des impôts, CinemArt envoie à l’Utilisateur un Reçu Fiscal, en
+						plus de l’attestation de paiement. CinemArt est chargé de
+						collecter les paiements réalisés par les Contributeurs au profit
+						des Organismes présents sur le site. CinemArt ne peut payer aux
+						Organismes que les sommes qui lui ont été effectivement réglées.
+
+						CinemArt s’engage à payer aux Organismes une somme égale à 100%
+						des paiements en ligne effectués à destination des Organismes. Les
+						Pourboires perçus par CinemArt dans ce cadre ne sont pas reversés
+						à l’Organisme. Tout utilisateur pourra résilier son Compte
+						CinemArt à tout moment en ouvrant une session avec son e-mail et
+						mot de passe et en cliquant sur « Se désinscrire de CinemArt ».
+
+						Cette résiliation entraînera automatiquement l'inaccessibilité de
+						l'ensemble des Contenus stockés sur le Service et en particulier
+						les justificatifs de paiement. Il est donc conseillé aux
+						utilisateurs de veiller préalablement à la sauvegarde de leurs
+						contenus sur un autre compte ou sur tout support de leur choix.
+						Lorsque le système de paiement proposé sur le site est celui géré
+						par la société Lemon Way, l’inscription sur le site CinemArt
+						emporte également création d’un compte de paiement géré par la
+						société Lemon Way, conformément aux conditions générales
+						d’utilisation figurant en annexe. Ce compte de paiement récapitule
+						tous les paiements réalisés par les Contributeurs. Cette ouverture
+						de compte est réalisée par l'intermédiaire de CinemArt agissant en
+						tant qu'agent prestataire de service de paiement pour le compte de
+						la société Lemon Way. L’utilisateur mandate expressément CinemArt
+						pourouvrir un Compte de paiement et gérer les flux liés à son
+						fonctionnement. Lors de la création du compte de paiement, le
+						Contributeur doit choisir un moyen de paiement dont les données
+						peuvent être enregistrées par CinemArt. Toutefois, les données
+						peuvent être supprimées à la demande du contributeur en écrivant à
+						l’adresse mail contact@CinemArt.com ou par tout procédé qui serait
+						mentionné sur le site. Lorsque le système de paiement proposé sur
+						le site est celui géré par la société Stripe, Ltd, l’utilisation
+						du Service implique pour le Contributeur d’accepter de communiquer
+						à cette société les informations nécessaires à son identification
+						et au paiement qu’il entend réaliser. Ces données sont gérées de
+						manière confidentielle par la société Stripe, Ltd et non par
+						CinemArt. Les paiements en ligne ne font pas l'objet d'un droit de
+						rétractation. Tout paiement est ferme et définitif. Les paiements
+						réalisés par les Contributeurs sur le site CinemArt ne donnent
+						lieu à aucun remboursement. En particulier, les billets proposés
+						sur le site dans le cadre des évènements gérés par l’Organisme ne
+						sont ni repris, ni échangés, ni remboursés, même en cas de perte
+						ou de vol. CinemArt agit en tant qu’intermédiaire entre les
+						Utilisateurs et l’Organisme et ne prend pas charge le traitement
+						des demandes de remboursements ou des rétractations qui seraient
+						formulées par les Utilisateurs. La responsabilité de CinemArt ne
+						serait donc être engagée à aucun titre sur ce point. Le
+						remboursement du billet en cas d’annulation de l’évènement relève
+						uniquement d’une décision de l’Organisme.</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingSix">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseSix"
+						aria-expanded="false" aria-controls="flush-collapseSix">
+						6 – Responsabilité de CinemArt</button>
+				</h2>
+				<div id="flush-collapseSix" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingSix"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">CinemArt décline expressément
+						toute responsabilité concernant le site CinemArt, contenu et ses
+						services. Le site CinemArt son contenu et ses services sont
+						fournis « en l'état » et l'utilisation que vous en faites est à
+						vos propres risques. CinemArt ne garantit pas que l'accès au site
+						CinemArt.com et à ses services se fera de manière continue et sans
+						erreurs, que le site CinemArt.com sera sans virus, que les
+						contenus des entreprises partenaires ne seront pas illicites, que
+						l'information présente sur le site CinemArt.com sera précise,
+						complète et fiable. L'utilisation des services du site se fait à
+						vos propres risques. CinemArt ne saurait être tenu responsable des
+						dommages éventuels causés à votre système informatique ou de la
+						perte de données résultant de l'utilisation des services du site.
+						Aucune information, conseil ni aucun renseignement écrit ou oral
+						fourni par CinemArt ou un tiers ne saurait créer des garanties non
+						énoncées expressément dans le présent contrat. CinemArt ne saurait
+						en aucun cas être tenu pour responsable de tout problème rencontré
+						suite à l’utilisation du service et de toutes ses conséquences
+						éventuelles. L’utilisation des fonds par l’Organisme ne peut en
+						aucun cas engager la responsabilité de CinemArt vis à vis des
+						Utilisateurs. Le choix d'un Organisme se fait à la seule
+						discrétion de l’Utilisateur et à ses propres risques. CinemArt
+						s’attache à nouer des partenariats de qualité mais ne saurait
+						contrôler l’utilisation faite de ces fonds. Néanmoins, tout
+						Organisme ayant utilisé ses fonds de manière illégale avérée sera
+						exclu des services fournis par CinemArt. Les fonds collectés au
+						profit de cette entreprise ne lui ayant pas été encore versés
+						seront alors remboursés aux contributeurs. Les Utilisateurs,
+						annonceurs, entreprises partenaires ou entreprises partenaires
+						sont seuls responsables de leurs déclarations sur CinemArt.com.
+						Les descriptifs, avis, ainsi que tous les autres contenus
+						disponibles sur les sites de CinemArt ne garantissent pas la
+						qualité réelle des services annoncés et sont uniquement fournis à
+						titre informatifs. Les Visiteurs et Utilisateurs du site
+						CinemArt.com ou de tout autre site exploité par CinemArt sont
+						seuls responsables des décisions qu’ils prennent suite à la
+						consultation des informations disponibles sur le site
+						CinemArt.com. Ils sont invités à consulter également d’autres
+						sources d’information et à effectuer leurs propres recherches.
+
+						CinemArt ne peut voir sa responsabilité engagée sur les contenus
+						diffusés et disponibles à partir des liens hypertextes vers
+						d'autres sites Internet présents sur son site ou ailleurs. Les
+						informations présentées sur le site étant soumises à de rapides
+						changements, CinemArt décline toute responsabilité quant au
+						contenu et ne garantit pas la véracité ni l'exhaustivité de ces
+						informations.</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingSeven">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven"
+						aria-expanded="false" aria-controls="flush-collapseSeven">
+						7 – Données à caractère personnel</button>
+				</h2>
+				<div id="flush-collapseSeven" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingSeven"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">CinemArt pratique une politique
+						de protection des données personnelles dont les caractéristiques
+						sont explicitées dans le document intitulé Charte relative à la
+						protection des données à caractère personnel, accessible sur la
+						page d’accueil du Service et dont vous êtes expressément invités à
+						prendre connaissance. CinemArt déclare notamment respecter toutes
+						les obligations légales et réglementaires qui lui incombent en
+						matière de protection des données à caractère personnel visant à
+						garantir notamment la sécurité et la confidentialité des données
+						collectées et traitées. Elle s’engage à ce titre à respecter la
+						règlementation en vigueur applicable au traitement de données à
+						caractère personnel et notamment au Règlement européen sur la
+						protection des données n°2016/679 du 27 avril 2016. CinemArt n’est
+						en aucun cas responsable de tout traitement de données à caractère
+						personnel réalisé par un Organisme au titre des activités et des
+						opérations réalisées par l’intermédiation du Service, et
+						auxquelles CinemArt est strictement étrangère. Il appartint à tout
+						Organisme, le cas échéant de respecter toutes les obligations
+						règlementaires qui lui incombent à ce titre. Dans le cadre de
+						leurs relations contractuelles, les Parties s’engagent à respecter
+						la règlementation en vigueur applicable au traitement de données à
+						caractère personnel et notamment au Règlement européen sur la
+						protection des données n°2016/679 du 27 avril 2016.</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingHeight">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseHeight"
+						aria-expanded="false" aria-controls="flush-collapseHeight">
+						8 – Responsabilité des utilisateurs</button>
+				</h2>
+				<div id="flush-collapseHeight" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingHeight"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">Vous êtes responsable de tout
+						Contenu (i) que vous rendez accessible à des tiers, (ii) que vous
+						envoyez par courrier électronique ou (iii) que vous stockez sur
+						des espaces personnels du Service ou (iv) sur des espaces
+						accessibles à des tiers, (v) que vous téléchargez, ou (vi)
+						transmettez de toute autre manière par le Service. Vous êtes par
+						ailleurs conscient que tout Contenu accessible au public mis en
+						ligne par un des utilisateurs du Service relève de la
+						responsabilité de celui-ci, CinemArt n'exerçant pas de contrôle a
+						priori sur lesdits Contenus. CinemArt n'a pas d'obligation
+						générale de surveillance du contenu stocké sur ses Services par
+						les utilisateurs. Vous vous interdisez dans le cadre de
+						l'utilisation des Services de vous livrer à des actes, de quelque
+						nature que ce soit (notamment à des actes d’envoi, diffusion,
+						édition, émission, mise en ligne, publication ou de toute autre
+						manière), qui seraient contraires à la loi française, porteraient
+						atteinte à l'ordre public français, ou aux droits d'un tiers. En
+						particulier, et sans que cette liste soit limitative, vous vous
+						interdisez de : Vous livrer à des actes constitutifs d'apologie
+						des crimes contre l'humanité, de négation de génocides,
+						d'incitation à la violence, à la haine raciale ou à la
+						pornographie infantile ; Vous livrer à des actes de diffamation,
+						d'injure, de menaces, de chantage, de harcèlement ou à des actes
+						attentatoires à la vie privée ou à la dignité humaine ; Porter
+						atteinte d'une quelconque manière aux utilisateurs mineurs, de les
+						inciter à se mettre en danger d'une quelconque manière ; En
+						particulier, transmettre, diffuser, éditer, publier ou rendre
+						accessible tout Contenu qui pourrait être constitutif, sans que
+						cette liste soit limitative, d'incitation à la réalisation de
+						crimes et délits ; de propagation de fausses nouvelles ou
+						d'informations financières couvertes par le secret, de même que
+						tout Contenu destiné à représenter ou proposer à la vente des
+						objets et/ou des ouvrages, des logiciels, des Contenus interdits
+						par la loi ou portant atteinte aux droits de tiers ; d'atteinte à
+						l'autorité de la justice ; d'atteinte à la vie privée, à la
+						protection des données personnelles ou au secret des
+						correspondance ; de divulgation d'informations couvertes par un
+						secret relatives, notamment à l'adoption plénière, à un procès en
+						cours, au suicide, ou à la santé d'un tiers, ou à une situation
+						patrimoniale ou financière individuelle couverte par le secret ou
+						par le droit à l'intimité de la vie privée; ou encore d'acte
+						mettant en péril des mineurs notamment par la fabrication, la
+						transmission, la diffusion ou l'accessibilité de messages à
+						caractère violent ou pornographique, de nature à porter atteinte à
+						la dignité humaine ou de nature à permettre la fabrication
+						d'explosifs ; Tenter d'induire en erreur d'autres utilisateurs en
+						usurpant l'identité ou une dénomination sociale ou en portant
+						atteinte à l'image ou à la réputation d'autres personnes et/ou en
+						vous faisant passer pour un tiers ou pour un employé, un service
+						habilité ou un affilié de CinemArt! ; Falsifier des données,
+						messages ou documents, des en-têtes de messages ou de données
+						d'identification ou de connexion à un Service ou manipuler de
+						toute autre manière un identifiant de manière à dissimuler
+						l'origine de la transmission d'un Contenu via le Service ; Vous
+						livrer à une violation des droits de propriété intellectuelle
+						(notamment en matière de musique, vidéo, animations, jeux,
+						logiciels, bases de données, images, sons et textes) ou tout autre
+						droit de propriété (ci-après dénommés collectivement les « Droits
+						») appartenant à autrui ; Expédier ou faire expédier des courriers
+						électroniques ou des messages instantanés à des personnes qui ne
+						les ont pas sollicités ou sans avoir respecté leurs droits
+						reconnus par la loi, tels que des publicités, du matériel
+						promotionnel, des chaînes de lettres ou toute autre forme de
+						prospection directe non sollicitée ; mettre en ligne des messages
+						à caractère promotionnel sur les Services CinemArt ; Télécharger
+						sciemment, afficher, émettre, diffuser, transmettre ou rendre
+						accessible de toute autre manière tout Contenu comprenant ou
+						constituant des virus informatiques ou tout autre code ou
+						programme informatique conçus pour interrompre, détruire,
+						détourner ou limiter les fonctionnalités ou les performances de
+						tout logiciel, ordinateur, service ou outil de communications
+						électroniques sans que cette énumération ne soit limitative ;
+						Perturber, ralentir, bloquer ou altérer le flux normal des données
+						échangées dans le cadre du Service, accélérer le rythme de
+						défilement des Contenus du Service de telle manière que le
+						fonctionnement du Service soit modifié ou altéré ou commettre
+						toute autre action ayant un effet perturbateur équivalent sur les
+						fonctionnalités du Service ; Accéder frauduleusement, se
+						maintenir, entraver ou perturber les systèmes d'information de
+						CinemArt et notamment des Services, les serveurs, les réseaux
+						connectés au Service, ou refuser de se conformer aux conditions
+						requises, aux procédures, aux règles générales ou aux dispositions
+						réglementaires applicables aux réseaux connectés au Service. Si
+						vous constatez ou estimez que du Contenu stocké sur le Service
+						présente un caractère manifestement illicite, vous pouvez le
+						signaler à CinemArt en envoyant un mail à contact@CinemArt.com
+
+						Votre notification doit impérativement permettre à CinemArt
+						d'identifier le Contenu illicite et le chemin d'accès à ce
+						contenu. Cette notification doit contenir les éléments suivants :
+
+						Vos noms, prénoms et domicile ; Une copie du contenu qui vous
+						semble litigieux ainsi que l'adresse URL de la page concernée ou
+						les nom et prénom de l’auteur du contenu litigieux ; Les motifs
+						pour lesquels vous pensez que le contenu doit être retiré. Toute
+						notification d'un contenu abusivement présenté comme illicite dans
+						le but d'en obtenir le retrait vous exposerait à des sanctions
+						civiles et/ou pénales. Une seule inscription utilisateur par
+						personne physique et morale est autorisée. En revanche, les
+						Utilisateurs peuvent regrouper plusieurs adresses mails sur le
+						même compte. En cas de fraude, CinemArt se réserve le droit de
+						supprimer tous les comptes de ces utilisateurs. CinemArt pourra
+						procéder à la suspension immédiate du compte créé sur le site
+						CinemArt, de plein droit et sans préavis : En cas de non-respect
+						des présentes conditions générales ; En cas de non-respect des
+						conditions générales d’utilisation proposées par LemonWay ; En cas
+						de blocage du compte de paiement par LemonWay; En cas de
+						non-respect de la charte éthique CinemArt ; En cas de données
+						d'identification inexactes, périmées ou incomplètes ; En cas de
+						risque de fraude, de blanchiment de capitaux ou financement du
+						terrorisme ou de risque pouvant affecter la sécurité du Compte de
+						paiement ou le fonctionnement du site CinemArt ; En cas de
+						réception par Lemon Way ou par Stripe d’un nombre important de
+						demandes de remboursement, d’annulation d’ordres ou de
+						contestation pour ordres non autorisés ; Lorsque des Contenus ont
+						fait l’objet de signalisations par les Internautes ; Le cas
+						échéant, CinemArt vous contactera dans les meilleurs délais
+						possibles pour tenter de remédier à la difficulté soulevée.
+						CinemArt se réserve le droit de supprimer le compte créé par
+						l’Utilisateur qui viendrait à : Pirater le site de quelque manière
+						que ce soit ; Contrevenir aux obligations des présentes conditions
+						générales ou aux obligations contenues dans les conditions
+						générales d’utilisation proposées par Lemon Way ; Utiliser des
+						robots de fausses inscriptions, ou de faux envois de mail ;
+						S’inscrire sous le nom d’une autre personne ; Fournir des
+						informations personnelles fausses ou invérifiables ; S’inscrire
+						plusieurs fois. L’utilisateur s'interdit d'obtenir les adresses
+						e-mail des autres utilisateurs afin de nuire au fonctionnement
+						normal de leur courrier électronique. Tous les mails de type "
+						Mails Bombing ", " Flamming ", " Spamming " sont interdits. Au
+						titre de votre utilisation du site CinemArt.com et du Logiciel de
+						CinemArt, vous acceptez d'indemniser CinemArt, ses fournisseurs,
+						ses employés, ses dirigeants et autres tierces partie de tous les
+						dommages directs, indirects, consécutifs, spéciaux, fortuits,
+						accessoires, exemplaires, de toute perte, toute demande de
+						dommages-intérêts, incluant les honoraires d'avocat et autres
+						frais judiciaires, occasionnés par vous-même ou tout tiers
+						résultant de ou étant associé à votre utilisation du Logiciel
+						et/ou résultant de toute violation des « Conditions Générales
+						d’utilisation »</div>
+				</div>
+			</div>
+		</div>
+
+		<br />
+
+
+		<div class="accordion accordion-flush" id="accordionFlushExample">
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingNine">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseNine"
+						aria-expanded="false" aria-controls="flush-collapseNine">
+						9 - Copyright et propriété intellectuelle</button>
+				</h2>
+				<div id="flush-collapseNine" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingNine"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">Toutes les informations, écrans,
+						graphismes, données, textes, logiciels, musiques, sons,
+						photographies, images, vidéos, messages, avis, opinions, ou
+						commentaires de toute sorte ou tous autres matériels présents sur
+						CinemArt.com sont la propriété exclusive de CinemArt. De ce fait
+						toute reproduction, modification, distribution de ces éléments est
+						interdite sans l'accord préalable exprès de son propriétaire. Les
+						Services ainsi que tout logiciel, contenu ou matériel utilisé par
+						CinemArt en relation avec les Services (ci-après dénommé «
+						Logiciels ») contiennent des informations confidentielles qui sont
+						protégées notamment par le code de la propriété intellectuelle.
+						Sans préjudice des conditions particulières ou licence
+						d'utilisation auxquelles vous souscrivez lors de l'utilisation
+						d'un service spécifique, CinemArt vous concède une licence
+						personnelle, non cessible, et non exclusive d'utiliser le Logiciel
+						sous sa forme exécutable sur un seul ordinateur à la fois (ou
+						téléphone portable ou autre appareil assimilé permettant l'accès
+						au Service), étant entendu qu'il vous est interdit de copier,
+						modifier, intégrer les Logiciels dans une œuvre dérivée, ou d'user
+						de toute autre méthode pour tenter d'accéder au code source ou aux
+						protocoles des Logiciels. CinemArt se réserve la faculté de
+						corriger tout dysfonctionnement du Logiciel. Vous n'avez pas le
+						droit de vendre, céder, sous-licencier, donner en garantie ou
+						transmettre de toute autre manière les Logiciels. Vous vous
+						engagez en outre à ne pas acheter, expédier, transporter,
+						exporter, ou réexporter les Logiciels en dehors de l'Union
+						européenne, sauf dans les cas autorisés par la loi. Vous
+						reconnaissez également que le Contenu compris dans des publicités,
+						les informations qui vous sont présentées via le Service ou par
+						des annonceurs tiers sont protégés par le droit d'auteur, le droit
+						des marques, le droit des brevets, ou tout autre droit reconnu par
+						la législation en vigueur. Pour ce qui concerne le Contenu que
+						vous stockez ou mettez en ligne sur les Services en vue de le
+						rendre accessible à des tiers, vous accordez à CinemArt, un droit
+						non-exclusif et gratuit d'utilisation permettant à CinemArt de
+						reproduire, publier et diffuser ce Contenu aux fins de fourniture
+						du Service, de sa promotion et de sa distribution, et ce, sur tout
+						support électromagnétique et par tout moyen de communication
+						électronique, sur les sites de CinemArt et sur les sites de
+						partenaires ou de tiers. Ce droit est accordé pour la durée
+						pendant laquelle vous déciderez d'inclure le Contenu sur le
+						Service. Vous garantissez à CinemArt d’avoir préalablement obtenu
+						les droits nécessaires à cette exploitation et que le contenu est
+						conforme à la loi et ne porte pas atteinte aux droits de tiers. Le
+						Service est la propriété de CinemArt et/ou de ses ayants droits.
+						L'utilisation personnelle des Services offerts sur le Site
+						CinemArt exclut l'exploitation à toute autre fin. Vous vous
+						interdisez notamment toute exploitation commerciale ou à but
+						lucratif de tout ou partie des Services ou de l'accès aux
+						Services. En conséquence, vous vous interdisez de reproduire,
+						copier, vendre, revendre, échanger ou exploiter dans un but
+						commercial ou moyennant une quelconque rémunération, profit ou
+						avantage, tout ou partie du Service, toute utilisation du Service,
+						ou tout droit d'accès au Service.</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-headingTen">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#flush-collapseTen"
+						aria-expanded="false" aria-controls="flush-collapseTen">
+						10 – Autres dispositions</button>
+				</h2>
+				<div id="flush-collapseTen" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingTen"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">Le fait qu’une disposition de ces
+						« Conditions générales d’utilisation du Service CinemArt » se
+						révèle être, en totalité ou en partie, illicite ou inapplicable
+						pour quelque raison que ce soit, sera sans incidence sur la
+						validité des autres clauses des présentes conditions
+						d’utilisation. En cas d’acquisition de la société CinemArt par une
+						tierce partie ou de fusion entre CinemArt et une tierce partie,
+						CinemArt se réserve le droit de céder tout ou partie de ses droits
+						et obligations au titre des présentes conditions d’utilisation à
+						la dite tierce partie ou à la nouvelle entité résultant de la
+						fusion. CinemArt se réserve la possibilité de modifier les
+						présentes dispositions à tout moment et sans préavis. Les
+						nouvelles conditions d’utilisation du site CinemArt seront
+						disponibles sur le site CinemArt.com et la continuation de
+						l’utilisation du service CinemArt vaudra acceptation de ces
+						conditions. Ainsi, nous vous conseillons de les consulter
+						régulièrement. Les présentes CGU sont régies, interprétées et
+						appliquées conformément au droit français. Si l’utilisation du
+						site CinemArt contrevient à la législation du pays dans lequel
+						réside l'utilisateur ou le Visiteur, il convient pour celui-ci de
+						ne pas utiliser le site CinemArt.com. Il est le mieux placé pour
+						juger de l’opportunité et de la légalité de cette utilisation.
+						L'utilisation du site CinemArt.com se fait aux propres risques de
+						chaque utilisateur. CinemArt fera tout son possible pour trouver
+						les moyens satisfaisants de résoudre les problèmes rencontrés sur
+						son site. Si cela ne s’avérait pas possible, CinemArt pourrait
+						solliciter une médiation, un arbitrage, ou l’introduction d’une
+						instance auprès d’un tribunal. En cas de réclamation, de plainte
+						émanant de tiers ou d'action judiciaire formée à l'encontre de
+						CinemArt, ses représentants, ses salariés, ou ses partenaires,
+						consécutive à l'envoi, l'affichage, la diffusion, l'émission,
+						l'édition, la mise en ligne ou la transmission de Contenu par vos
+						soins sur les Services, ou du fait de votre utilisation des
+						Services, vous vous engagez à assister CinemArt, ses
+						représentants, salariés, ou partenaires dans la préparation de
+						leur réponse ou défense en leur communiquant tous documents,
+						données ou informations utiles à cette fin.</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br />
+	<br />
+
+
+	<!-- Option : Bootstrap Bundle with Popper -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+		crossorigin="anonymous"></script>
+
+
+</body>
+
+<!-- Footer -->
+<footer>
+	<div th:replace="footer :: myFooter"></div>
+</footer>
+</html>

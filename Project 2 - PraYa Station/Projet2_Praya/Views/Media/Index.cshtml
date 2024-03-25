@@ -1,0 +1,114 @@
+﻿@model Projet2_Praya.Models.medium
+@{
+    ViewBag.Title = "Médias associés au projet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<body>
+    <h2>Ajoutez des médias à votre projet ! </h2>
+    @if (ViewBag.monprojet != null)
+    {
+        <div>
+            Infos projet:
+            <div>Libellé projet: <h3>@ViewBag.monprojet.libelle</h3> </div>
+
+        </div>
+    }
+
+
+    @using (Html.BeginForm("CreateMedia", "media", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+
+            <div style="display:none">
+                <label>numéro projet : </label>
+                @Html.TextBoxFor(model => model.id_projet)
+            </div>
+            <hr />
+            <div>
+                <label>Libellé image : </label>
+                @*@Html.TextBoxFor(model => model.lib_image)*@
+                @Html.DropDownListFor(model => model.lib_image, new SelectList(ViewBag.LibImage, "Value", "Text"), "Selectionnez Libellé")
+                @if (ViewBag.errLibel != "")
+                {
+                    <label style="color:red">@ViewBag.errLibel</label>
+                }
+            </div>
+
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.media, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input name="fileToUpload" type="file"><br />
+                </div>
+                @if (ViewBag.errFile != "")
+                {
+                    <label style="color:red">@ViewBag.errFile</label>
+                }
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Importer" @*class="btn btn-default"*@ />
+                </div>
+            </div>
+
+
+        </div>
+
+
+    }
+    <div>
+        @if (ViewBag.monmedia != -1)
+        {
+            <hr />
+            <h2>Image principale du projet</h2>
+
+            @Html.ActionLink("DeleteMedia", "DeleteMedia", new { id = ViewBag.monmedia }) <br />
+
+            <img src="@Url.Action("GetPicture", new { id = ViewBag.monmedia })" />
+
+        }
+    </div>
+    <div>
+        @if (ViewBag.image2 != -1)
+        {
+            <hr />
+            <h2>seconde image du projet</h2>
+
+            @Html.ActionLink("DeleteMedia", "DeleteMedia", new { id = ViewBag.image2 }) <br />
+
+            <img src="@Url.Action("GetPicture", new { id = ViewBag.image2 })" />
+
+        }
+    </div>
+    <div>
+        @if (ViewBag.image3 != -1)
+        {
+            <hr />
+            <h2>Troisième image du projet</h2>
+
+            @Html.ActionLink("DeleteMedia", "DeleteMedia", new { id = ViewBag.image3 }) <br />
+
+            <img src="@Url.Action("GetPicture", new { id = ViewBag.image3 })" />
+
+        }
+    </div>
+    <div>
+        @if (ViewBag.image4 != -1)
+        {
+            <hr />
+            <h2>Quatrième image du projet</h2>
+
+            @Html.ActionLink("DeleteMedia", "DeleteMedia", new { id = ViewBag.image4 }) <br />
+
+            <img src="@Url.Action("GetPicture", new { id = ViewBag.image4 })" />
+
+        }
+    </div>
+
+</body>
+
+

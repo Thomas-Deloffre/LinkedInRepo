@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" th:href="@{css/MainStyleCinemArt.css}">
+<title>Cinemart, la plateforme de financement participatif des
+	projets audiovisuels!</title>
+</head>
+<body>
+	<header>
+		<div th:replace="header :: myHeader"></div>
+	</header>
+	<div class="backProfil">
+		<div class="boxProfil">
+			<div class="barreOngletsProfil">
+				<div id="ongletInformations" class="ongletsProfil">Informations</div>
+				<div id="ongletProjets" class="ongletsProfil">Mes projets</div>
+				<div id="ongletFavoris" class="ongletsProfil">Mes Dons</div>
+				<div id="ongletMessagerie" class="ongletsProfil">Messagerie</div>
+				<div id="ongletCommentaires" class="ongletsProfil">Commentaires</div>
+			</div>
+			<div id="corpsInformations" class="corpsOnglets">
+				<form action="/modifierUtilisateur" method="post">
+					<div class="formConnectionBox">
+						<div class="formHead topRound">Mes informations</div>
+						<div class="divWithLabelInput">
+							<input class="inputWithLabel" type="text" name="pseudo"
+								th:value="${utilisateur.pseudo}">
+						</div>
+						<div class="divWithLabelInput">
+							<input class="inputWithLabel" type="password" name="mdp"
+								th:value="${utilisateur.motDePasse}">
+						</div>
+						<div class="divWithLabelInput">
+							<input class="inputWithLabel" type="text" name="nom"
+								th:value="${utilisateur.profil.nom}">
+						</div>
+						<div class="divWithLabelInput">
+							<input class="inputWithLabel" type="text" name="prenom"
+								th:value="${utilisateur.profil.prenom}">
+						</div>
+						<div class="divWithLabelInput">
+							<input class="inputWithLabel" type="text" name="email"
+								th:value="${utilisateur.profil.email}">
+						</div>
+						<div class="divSubmit">
+							<input class="submitModifier" type="submit" value="Modifier">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div id="corpsProjets" class="corpsOnglets">
+			<br>
+				<div id="btnTraitement" class="btnTraitement foreTitle lead">Mes projets en
+					attente de traitements :</div>
+				<div id="projetAttenteTraitement">
+					<table class="tableProjets">
+						<caption  >Vos projets en cours de création :</caption>
+						<tr>
+							<th>Titre</th>
+							<th>Statut</th>
+							<th>Categorie</th>
+							<th>Courte description</th>
+							<th>Montant demande</th>
+							<th></th>
+							<th></th>
+						</tr>
+						<tr th:each="projet: ${listeProjetsActive}">
+							<td th:text="${projet.titre}" />
+							<td th:text="${projet.projetStatut}" />
+							<td th:text="${#strings.toString(projet.categorie)}" />
+							<td th:text="${projet.courteDescription}" />
+							<td th:text="${projet.montantDemande} + ' euro(s)'" />
+							<td><a
+								th:href="@{'http://localhost:8080/modifierSonProjet?idProjet=' + ${projet.idProjet}}"
+								th:text="'Modifier'" /></td>
+							<td><a
+								th:href="@{'http://localhost:8080/validerSonProjet?idProjet=' + ${projet.idProjet}}"
+								th:text="'Valider'" /></td>
+						</tr>
+					</table>
+					<table class="tableProjets">
+					<br>
+						<caption>Vos projets en attente de publication :</caption>
+						<tr>
+							<th>Titre</th>
+							<th>Statut</th>
+							<th>Categorie</th>
+							<th>Courte description</th>
+							<th>Montant demande</th>
+							<th></th>
+						</tr>
+						<tr th:each="projet: ${listeProjetsValider}">
+							<td th:text="${projet.titre}" />
+							<td th:text="${projet.projetStatut}" />
+							<td th:text="${#strings.toString(projet.categorie)}" />
+							<td th:text="${projet.courteDescription}" />
+							<td th:text="${projet.montantDemande} + ' euro(s)'" />
+							<td><a
+								th:href="@{'http://localhost:8080/publierSonProjet?idProjet=' + ${projet.idProjet}}"
+								th:text="'Publier'" /></td>
+						</tr>
+					</table>
+				</div>
+				<br>
+				<div id="btnAutres" class="btnTraitement foreTitle lead">Mes autres projets :</div>
+				<div id="projetAutres">
+					<table class="tableProjets">
+						<tr>
+							<th>Titre</th>
+							<th>Statut</th>
+							<th>Categorie</th>
+							<th>Courte description</th>
+							<th>Montant demande</th>
+							<th></th>
+						</tr>
+						<tr th:each="projet: ${listeProjetsAutres}">
+							<td th:text="${projet.titre}" />
+							<td th:text="${projet.projetStatut}" />
+							<td th:text="${#strings.toString(projet.categorie)}" />
+							<td th:text="${projet.courteDescription}" />
+							<td th:text="${projet.montantDemande} + ' euro(s)'" />
+							<td><a
+								th:href="@{'http://localhost:8080/page_projet?idProjet=' + ${projet.idProjet}}"
+								th:text="'Voir'" /></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<br>
+			<div id="corpsMessagerie" class="corpsOnglets">
+				<br>
+				<h1 class="foreTitle lead"  >Un probleme? Prenez contact avec notre support :</h1>
+				<form method="post" action="/createDiscutionSupport">
+					<div class="messageSupportBox">
+						<div class="intituleMessageSupport">
+							<label class="textIntitule">Intitulé : </label> <input
+								class="inputIntitule" type="text" name="intitule" />
+						</div>
+						<div>
+							<textarea class="textAreaMsgSupport" rows="20" cols="50"
+								name="message"></textarea>
+						</div>
+						<div>
+							<input class="submitMsgSupport" type="submit" value="Envoyer" />
+						</div>
+					</div>
+				</form>
+			</div>
+			<div id="corpsFavoris" class="corpsOnglets">
+			<br>
+				<h1 class="foreTitle lead" >Mes dons :</h1>
+				<div class="donationBox">
+					<table class="tableProjets">
+						<tr>
+							<th>Montant</th>
+							<th>Titre projet</th>
+						</tr>
+						<tr th:each="don : ${listeDons}">
+							<td th:text="${don.montant}"></td>
+							<td th:text="${don.projet.titre}"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div id="corpsCommentaires" class="corpsOnglets">
+				<h1 class="foreTitle lead"  >Mes derniers commentaires :</h1>
+				<div class="donationBox tableLong">
+					<table class="tableProjets">
+						<tr>
+							<th>Commentaire</th>
+							<th>Titre du projet</th>
+							<th></th>
+						</tr>
+						<tr th:each="comm : ${listeCommentaire}">
+							<td th:text="${comm.projet.titre}"></td>
+							<td th:text="${comm.contenu}"></td>
+							
+							<td class="btnTd">
+								<a
+									th:href="@{'http://localhost:8080/page_projet?idProjet=' + ${comm.projet.idProjet}}"
+									th:text="'Voir Projet'" />
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+	let btnTraitement = $("#btnTraitement");
+	let projetAttenteTraitement = $("#projetAttenteTraitement");
+	btnTraitement.click(function() {
+		if(projetAttenteTraitement.is(":visible")){
+			projetAttenteTraitement.hide();
+		}
+		else{
+			projetAttenteTraitement.show();
+		}
+	});
+	let btnAutres = $("#btnAutres");
+	let projetAutres = $("#projetAutres");
+	btnAutres.click(function() {
+		if(projetAutres.is(":visible")){
+			projetAutres.hide();
+		}
+		else{
+			projetAutres.show();
+		}
+	});
+	
+	let ongletInformations = $("#ongletInformations");
+	let ongletProjets = $("#ongletProjets");
+	let ongletFavoris = $("#ongletFavoris");
+	let ongletMessagerie = $("#ongletMessagerie");
+	let ongletCommentaires = $("#ongletCommentaires");
+	let corpsInformations = $("#corpsInformations");
+	let corpsProjets = $("#corpsProjets");
+	let corpsFavoris = $("#corpsFavoris");
+	let corpsMessagerie = $("#corpsMessagerie");
+	let corpsCommentaires = $("#corpsCommentaires");
+	
+	ongletInformations.css("background-color", "rgb(52, 84, 114)");
+	corpsProjets.hide();
+	corpsFavoris.hide();
+	corpsMessagerie.hide();
+	corpsCommentaires.hide();
+	ongletInformations.click(function() {
+		corpsInformations.show();
+		corpsProjets.hide();
+		corpsFavoris.hide();
+		corpsMessagerie.hide();
+		corpsCommentaires.hide();
+		ongletInformations.css("background-color", "rgb(52, 84, 114)");
+		ongletProjets.css("background-color", "rgb(23, 37, 50)");
+		ongletFavoris.css("background-color", "rgb(23, 37, 50)");
+		ongletMessagerie.css("background-color", "rgb(23, 37, 50)");
+		ongletCommentaires.css("background-color", "rgb(23, 37, 50)");
+	});
+	ongletProjets.click(function() {
+		corpsInformations.hide();
+		corpsProjets.show();
+		corpsFavoris.hide();
+		corpsMessagerie.hide();
+		corpsCommentaires.hide();
+		ongletInformations.css("background-color", "rgb(23, 37, 50)");
+		ongletProjets.css("background-color", "rgb(52, 84, 114)");
+		ongletFavoris.css("background-color", "rgb(23, 37, 50)");
+		ongletMessagerie.css("background-color", "rgb(23, 37, 50)");
+		ongletCommentaires.css("background-color", "rgb(23, 37, 50)");
+	});
+	ongletFavoris.click(function() {
+		corpsInformations.hide();
+		corpsProjets.hide();
+		corpsFavoris.show();
+		corpsMessagerie.hide();
+		corpsCommentaires.hide();
+		ongletInformations.css("background-color", "rgb(23, 37, 50)");
+		ongletProjets.css("background-color", "rgb(23, 37, 50)");
+		ongletFavoris.css("background-color", "rgb(52, 84, 114)");
+		ongletMessagerie.css("background-color", "rgb(23, 37, 50)");
+		ongletCommentaires.css("background-color", "rgb(23, 37, 50)");
+	});
+	ongletMessagerie.click(function() {
+		corpsInformations.hide();
+		corpsProjets.hide();
+		corpsFavoris.hide();
+		corpsMessagerie.show();
+		corpsCommentaires.hide();
+		ongletInformations.css("background-color", "rgb(23, 37, 50)");
+		ongletProjets.css("background-color", "rgb(23, 37, 50)");
+		ongletFavoris.css("background-color", "rgb(23, 37, 50)");
+		ongletMessagerie.css("background-color", "rgb(52, 84, 114)");
+		ongletCommentaires.css("background-color", "rgb(23, 37, 50)");
+	});
+	ongletCommentaires.click(function() {
+		corpsInformations.hide();
+		corpsProjets.hide();
+		corpsFavoris.hide();
+		corpsMessagerie.hide();
+		corpsCommentaires.show();
+		ongletInformations.css("background-color", "rgb(23, 37, 50)");
+		ongletProjets.css("background-color", "rgb(23, 37, 50)");
+		ongletFavoris.css("background-color", "rgb(23, 37, 50)");
+		ongletMessagerie.css("background-color", "rgb(23, 37, 50)");
+		ongletCommentaires.css("background-color", "rgb(52, 84, 114)");
+	});
+	</script>
+	<footer>
+		<div th:replace="footer :: myFooter"></div>
+	</footer>
+</body>
+</html>

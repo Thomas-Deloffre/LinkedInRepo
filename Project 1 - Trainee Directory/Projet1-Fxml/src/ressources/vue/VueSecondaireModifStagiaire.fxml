@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="549.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="11.0" layoutY="14.0" prefHeight="521.0" prefWidth="501.0" style="-fx-background-color: #b0e0e6; -fx-border-width: 0.2; -fx-border-color: black;" stylesheets="@MyTheme.css">
+         <children>
+            <TitledPane animated="false" prefHeight="37.0" prefWidth="501.0" text="Modification de Profils Stagiaire">
+               <font>
+                  <Font size="16.0" />
+               </font></TitledPane>
+            <TextField fx:id="yearTextField" layoutX="208.0" layoutY="375.0" promptText="xxxx" />
+            <TextField fx:id="formTextField" layoutX="208.0" layoutY="306.0" promptText="Intitulé formation" />
+            <TextField fx:id="departmentTextField" layoutX="208.0" layoutY="236.0" promptText="xx" />
+            <TextField fx:id="surnameTextField" layoutX="208.0" layoutY="161.0" promptText="Prenom" />
+            <TextField fx:id="nameTextField" layoutX="208.0" layoutY="88.0" promptText="Nom" />
+            <Label layoutX="61.0" layoutY="380.0" prefHeight="21.0" prefWidth="117.0" text="Année" textAlignment="CENTER" />
+            <Button fx:id="clsBtn" layoutX="369.0" layoutY="445.0" mnemonicParsing="false" text="Fermer" />
+            <Label layoutX="61.0" layoutY="93.0" prefHeight="21.0" prefWidth="117.0" text="Nom" textAlignment="CENTER" />
+            <Label layoutX="61.0" layoutY="241.0" prefHeight="21.0" prefWidth="130.0" text="Départment" textAlignment="CENTER" />
+            <Label layoutX="61.0" layoutY="166.0" prefHeight="21.0" prefWidth="117.0" text="Prénom" textAlignment="CENTER" />
+            <Button fx:id="rstBtn" layoutX="79.0" layoutY="445.0" mnemonicParsing="false" text="Reset" />
+            <Button fx:id="validBtn" layoutX="219.0" layoutY="445.0" mnemonicParsing="false" style="-fx-text-fill: #22B55A;" text="Modifier" />
+            <Label layoutX="61.0" layoutY="311.0" prefHeight="21.0" prefWidth="117.0" text="Formation" textAlignment="CENTER" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

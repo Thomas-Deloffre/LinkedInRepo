@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" th:href="@{css/MainStyleCinemArt.css}">
+<title>Cinemart, la plateforme de financement participatif des
+	projets audiovisuels!</title>
+</head>
+<body>
+	<header>
+		<div th:replace="headerAdministration :: myHeaderAdmin"></div>
+	</header>
+	<div class="backProfil">
+		<div class="boxProfil">
+			<div class="barreOngletsProfil">
+				<div id="ongletInformations" class="ongletsProfil">Informations</div>
+			</div>
+			<div id="corpsInformations" class="corpsOnglets">
+				<form action="/modifierUtilisateur" method="post">
+					<div class="formConnectionBox">
+						<div class="formHead topRound">Mes informations</div>
+						<div class="divWithLabelInput">
+							<input class="inputWithLabel" type="text" name="pseudo"
+								th:value="${utilisateur.pseudo}">
+						</div>
+						<div class="divWithLabelInput">
+							<input class="inputWithLabel" type="password" name="mdp"
+								th:value="${utilisateur.motDePasse}">
+						</div>
+						<div class="divWithLabelInput">
+							<input class="inputWithLabel" type="text" name="nom"
+								th:value="${utilisateur.profil.nom}">
+						</div>
+						<div class="divWithLabelInput">
+							<input class="inputWithLabel" type="text" name="prenom"
+								th:value="${utilisateur.profil.prenom}">
+						</div>
+						<div class="divWithLabelInput">
+							<input class="inputWithLabel" type="text" name="email"
+								th:value="${utilisateur.profil.email}">
+						</div>
+						<div class="divSubmit">
+							<input class="submitModifier" type="submit" value="Modifier">
+						</div>
+					</div>
+				</form>
+			</div>
+			</div>
+		</div>
+	<script>
+
+	let btnAutres = $("#btnAutres");
+	let projetAutres = $("#projetAutres");
+
+	btnAutres.click(function() {
+		if(projetAutres.is(":visible")){
+			projetAutres.hide();
+		}
+		else{
+			projetAutres.show();
+		}
+	});
+	
+	let ongletInformations = $("#ongletInformations");
+
+	let corpsInformations = $("#corpsInformations");
+	
+	ongletInformations.css("background-color", "rgb(52, 84, 114)");
+	corpsProjets.hide();
+	corpsFavoris.hide();
+	corpsMessagerie.hide();
+	corpsCommentaires.hide();
+	ongletInformations.click(function() {
+		corpsInformations.show();
+		corpsProjets.hide();
+		corpsFavoris.hide();
+		corpsMessagerie.hide();
+		corpsCommentaires.hide();
+		ongletInformations.css("background-color", "rgb(52, 84, 114)");
+		ongletProjets.css("background-color", "rgb(23, 37, 50)");
+		ongletFavoris.css("background-color", "rgb(23, 37, 50)");
+		ongletMessagerie.css("background-color", "rgb(23, 37, 50)");
+		ongletCommentaires.css("background-color", "rgb(23, 37, 50)");
+	});
+	</script>
+	<footer>
+		<div th:replace="footer :: myFooter"></div>
+	</footer>
+</body>
+</html>

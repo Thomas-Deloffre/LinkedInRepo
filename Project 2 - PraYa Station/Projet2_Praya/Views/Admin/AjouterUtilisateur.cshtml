@@ -1,0 +1,44 @@
+﻿@model Projet2_Praya.Models.utilisateur
+@{
+    ViewBag.Title = "Ajouter un utilisateur";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div>
+        <h2>
+            Veuillez Remplir les champs pour créer votre utilisateur :
+        </h2>
+        @using (Html.BeginForm())
+        {
+            <fieldset>
+                <legend>Créer un Utilisateur </legend>
+                <div>
+                    @Html.LabelFor(m => m.utilisateur_email)
+                    @Html.TextBoxFor(m => m.utilisateur_email)
+                    @Html.ValidationMessageFor(m => m.utilisateur_email)
+                </div>
+
+                <div>
+                    @Html.LabelFor(m => m.mot_de_passe)
+                    @Html.PasswordFor(m => m.mot_de_passe)
+                    @Html.ValidationMessageFor(m => m.mot_de_passe)
+                </div>
+
+                <div>
+                    @Html.LabelFor(m => m.nom)
+                    @Html.TextBoxFor(m => m.nom)
+                    @Html.ValidationMessageFor(m => m.nom)
+                </div>
+
+                <div>
+                    @Html.LabelFor(m => m.prenom)
+                    @Html.TextBoxFor(m => m.prenom)
+                    @Html.ValidationMessageFor(m => m.prenom)
+                </div>
+                <input type="submit" value="Créer" />
+            </fieldset>
+        }
+    </div>
+</body>
+
